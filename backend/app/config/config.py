@@ -19,7 +19,7 @@ class Settings:
         self.APP_NAME: str = os.getenv("APP_NAME", "Citation-Grounded Legal Document Research Assistant")
         self.APP_ENV: str = os.getenv("APP_ENV", "development")
         self.DEBUG: bool = os.getenv("DEBUG", "True").lower() in ("true", "1", "yes")
-        self.API_HOST: str = os.getenv("API_HOST", "127.0.0.1")
+        self.API_HOST: str = os.getenv("API_HOST", "0.0.0.0")
         self.API_PORT: int = int(os.getenv("API_PORT", "8000"))
 
         # Base Paths

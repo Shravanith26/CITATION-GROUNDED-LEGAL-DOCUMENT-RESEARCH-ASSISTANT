@@ -141,6 +141,11 @@ class DocumentService:
         elif os.path.exists(doc.source_path):
             with open(doc.source_path, "r", encoding="utf-8", errors="replace") as f:
                 full_text = f.read()
+        else:
+            fallback_path = os.path.join(settings.RAW_DOCUMENTS_DIR, os.path.basename(doc.source_path))
+            if os.path.exists(fallback_path):
+                with open(fallback_path, "r", encoding="utf-8", errors="replace") as f:
+                    full_text = f.read()
 
         return {
             "id": doc.id,

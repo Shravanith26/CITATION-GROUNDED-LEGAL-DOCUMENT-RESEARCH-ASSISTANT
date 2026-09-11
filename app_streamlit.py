@@ -83,6 +83,20 @@ st.markdown("""
 @st.cache_resource
 def get_rag_service():
     init_db()
+    db = SessionLocal()
+    try:
+        count = db.query(DocumentModel).count()
+        if count == 0:
+            import glob
+            doc_svc = DocumentService()
+            raw_files = sorted(glob.glob(os.path.join(settings.RAW_DOCUMENTS_DIR, "*.txt")))
+            for f in raw_files:
+                try:
+                    doc_svc.ingest_document_file(file_path=f, db=db)
+                except Exception as e:
+                    print(f"Auto-index failed for {f}: {e}")
+    finally:
+        db.close()
     return RAGService(), RetrievalService(), DocumentService()
 
 rag_service, retrieval_service, doc_service = get_rag_service()

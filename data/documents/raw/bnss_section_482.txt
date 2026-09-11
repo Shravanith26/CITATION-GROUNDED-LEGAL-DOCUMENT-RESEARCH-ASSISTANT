@@ -1,0 +1,28 @@
+DOCUMENT TITLE: Section 482, Bharatiya Nagarik Suraksha Sanhita, 2023
+COURT: Parliament of India / Statutory Enactment
+CITATION: Act No. 46 of 2023, Section 482
+BENCH: Statutory Provision
+DATE OF JUDGMENT: 2023-12-25
+DOCUMENT TYPE: statute
+
+[Section 482(1)]
+Direction for grant of bail to person apprehending arrest:
+Where any person has reason to believe that he may be arrested on accusation of having committed a non-bailable offence, he may apply to the High Court or the Court of Session for a direction under this section that in the event of such arrest he shall be released on bail; and that Court may, after taking into consideration, inter alia, the following factors, namely:
+(i) the nature and gravity of the accusation;
+(ii) the antecedents of the applicant including the fact as to whether he has previously undergone imprisonment on conviction in respect of any cognizable offence;
+(iii) the possibility of the applicant to flee from justice; and
+(iv) where the accusation has been made with the object of injuring or humiliating the applicant by having him so arrested,
+either reject the application forthwith or issue an interim order for the grant of bail.
+
+[Section 482(2)]
+When the High Court or Court of Session makes a direction under sub-section (1), it may include such conditions in such directions in the light of the facts of the particular case, as it may think fit, including:
+(i) a condition that the person shall make himself available for interrogation by a police officer as and when required;
+(ii) a condition that the person shall not, directly or indirectly, make any inducement, threat or promise to any person acquainted with the facts of the case so as to dissuade him from disclosing such facts to the Court or to any police officer;
+(iii) a condition that the person shall not leave India without the previous permission of the Court;
+(iv) such other condition as may be imposed under sub-section (3) of section 480, as if the bail were granted under that section.
+
+[Section 482(3)]
+The presence of the applicant seeking anticipatory bail shall not be mandatory at the time of hearing of the application, unless the Court considers it necessary in the interest of justice.
+
+[Section 482(4)]
+Nothing in this section shall apply to any case involving the arrest of any person on accusation of having committed an offence under section 65 or section 66 or sub-section (2) of section 70 of the Bharatiya Nyaya Sanhita, 2023.

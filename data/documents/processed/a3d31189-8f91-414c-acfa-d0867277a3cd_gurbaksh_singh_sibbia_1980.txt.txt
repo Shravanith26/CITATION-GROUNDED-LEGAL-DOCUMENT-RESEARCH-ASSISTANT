@@ -1,0 +1,29 @@
+[Para 1]
+This appeal by special leave involves the interpretation of Section 438 of the Code of Criminal Procedure, 1973, which confers power on the High Court and the Court of Session to grant anticipatory bail. The question before this Constitution Bench is regarding the scope, nature, and limitations governing the exercise of judicial discretion under Section 438 of the Code.
+
+[Para 7]
+Section 438 of the Code of Criminal Procedure, 1973 makes a departure from the previous Code of 1898 by introducing a provision for the grant of anticipatory bail. The Law Commission of India in its 41st Report recommended the introduction of this provision in order to safeguard the personal liberty of citizens against malicious, frivolous, or politically motivated accusations intended to humiliate, disgrace, or incarcerate individuals before trial.
+
+[Para 12]
+The power under Section 438 is of an extraordinary character and must be exercised with due care and circumspection. However, the discretion vested in the High Court and the Court of Session is not bound by rigid or inflexible fetters. The Legislature intentionally refrained from circumscribing the discretion with rigid rules. The High Court and the Court of Session must be left free to exercise their judicial discretion according to the facts and circumstances of each individual case.
+
+[Para 15]
+While considering an application for anticipatory bail under Section 438, the court must carefully evaluate several critical factors:
+First, the nature and gravity of the accusation and the exact role attributed to the applicant.
+Second, the antecedents of the applicant, including whether he has previously undergone imprisonment on conviction in respect of any cognizable offence.
+Third, the possibility of the applicant fleeing from justice or absconding.
+Fourth, whether the accusation has been made with the ulterior motive of injuring, humiliating, or tarnishing the reputation of the applicant by having him so arrested.
+Fifth, the likelihood of the accused tampering with evidence, threatening witnesses, or otherwise obstructing the course of fair investigation and trial.
+
+[Para 19]
+A blanket order of anticipatory bail cannot and ought not to be granted. A blanket order that an applicant shall be released on bail whenever he may be arrested in future for any offence whatsoever serves as a charter of lawlessness and impedes the legitimate functions of the investigating agency. An applicant seeking anticipatory bail must demonstrate a reasonable belief and apprehension of arrest founded on specific and tangible facts relating to a concrete offence.
+
+[Para 26]
+The court granting anticipatory bail is empowered under Section 438(2) to impose suitable conditions. Such conditions include:
+(i) A condition that the person shall make himself available for interrogation by a police officer as and when required;
+(ii) A condition that the person shall not, directly or indirectly, make any inducement, threat, or promise to any person acquainted with the facts of the case so as to dissuade him from disclosing such facts to the court or to any police officer;
+(iii) A condition that the person shall not leave India without the previous permission of the court; and
+(iv) Such other condition as may be imposed under sub-section (3) of Section 437, as if the bail were granted under that section.
+
+[Para 31]
+Anticipatory bail does not place the accused beyond the reach of the investigating machinery. If custodial interrogation becomes indispensable on discovery of new material during the course of investigation, the prosecution is always at liberty to apply to the court for cancellation or modification of the anticipatory bail order under Section 439(2) of the Code.

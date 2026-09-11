@@ -1,0 +1,177 @@
+[
+  {
+    "id": "Q01",
+    "question": "What factors are considered while granting anticipatory bail?",
+    "target_doc": "Gurbaksh Singh Sibbia and Others v. State of Punjab",
+    "expected_section": "Para 15",
+    "category": "legal_factors"
+  },
+  {
+    "id": "Q02",
+    "question": "Can a blanket order of anticipatory bail be granted by courts?",
+    "target_doc": "Gurbaksh Singh Sibbia and Others v. State of Punjab",
+    "expected_section": "Para 19",
+    "category": "legal_limitation"
+  },
+  {
+    "id": "Q03",
+    "question": "What is the duration of an anticipatory bail order according to Sushila Aggarwal?",
+    "target_doc": "Sushila Aggarwal and Others v. State (NCT of Delhi) and Another",
+    "expected_section": "Para 63",
+    "category": "bail_duration"
+  },
+  {
+    "id": "Q04",
+    "question": "Does anticipatory bail terminate automatically when the charge sheet is filed?",
+    "target_doc": "Sushila Aggarwal and Others v. State (NCT of Delhi) and Another",
+    "expected_section": "Para 78",
+    "category": "bail_duration"
+  },
+  {
+    "id": "Q05",
+    "question": "What directions did the Supreme Court issue in Arnesh Kumar regarding arrest?",
+    "target_doc": "Arnesh Kumar v. State of Bihar and Another",
+    "expected_section": "Para 11",
+    "category": "arrest_guidelines"
+  },
+  {
+    "id": "Q06",
+    "question": "When is notice of appearance under Section 41A CrPC mandatory before arrest?",
+    "target_doc": "Arnesh Kumar v. State of Bihar and Another",
+    "expected_section": "Para 8",
+    "category": "procedure"
+  },
+  {
+    "id": "Q07",
+    "question": "What conditions can the court impose under Section 438(2) while granting anticipatory bail?",
+    "target_doc": "Section 438, Code of Criminal Procedure, 1973",
+    "expected_section": "Section 438(2)",
+    "category": "conditions"
+  },
+  {
+    "id": "Q08",
+    "question": "How did Satender Kumar Antil categorize criminal offences for bail consideration?",
+    "target_doc": "Satender Kumar Antil v. Central Bureau of Investigation and Another",
+    "expected_section": "Para 18",
+    "category": "offence_classification"
+  },
+  {
+    "id": "Q09",
+    "question": "Under what provision can an order of anticipatory bail be cancelled if conditions are breached?",
+    "target_doc": "Gurbaksh Singh Sibbia and Others v. State of Punjab",
+    "expected_section": "Para 31",
+    "category": "bail_cancellation"
+  },
+  {
+    "id": "Q10",
+    "question": "How is the right to personal liberty under Article 21 connected to anticipatory bail?",
+    "target_doc": "Article 21, Constitution of India",
+    "expected_section": "Constitutional Jurisprudence",
+    "category": "constitutional_basis"
+  },
+  {
+    "id": "Q11",
+    "question": "Which section in the Bharatiya Nagarik Suraksha Sanhita (BNSS) 2023 replaces Section 438 CrPC?",
+    "target_doc": "Section 482, Bharatiya Nagarik Suraksha Sanhita, 2023",
+    "expected_section": "Section 482(1)",
+    "category": "statutory_reform"
+  },
+  {
+    "id": "Q12",
+    "question": "Is the physical presence of the applicant mandatory under Section 482 of BNSS 2023?",
+    "target_doc": "Section 482, Bharatiya Nagarik Suraksha Sanhita, 2023",
+    "expected_section": "Section 482(3)",
+    "category": "statutory_reform"
+  },
+  {
+    "id": "Q13",
+    "question": "What offences are excluded from the scope of anticipatory bail under Section 438(4) CrPC?",
+    "target_doc": "Section 438, Code of Criminal Procedure, 1973",
+    "expected_section": "Section 438(4)",
+    "category": "exceptions"
+  },
+  {
+    "id": "Q14",
+    "question": "How should courts treat economic offences while considering anticipatory bail under Antil guidelines?",
+    "target_doc": "Satender Kumar Antil v. Central Bureau of Investigation and Another",
+    "expected_section": "Para 26",
+    "category": "economic_offences"
+  },
+  {
+    "id": "Q15",
+    "question": "What was the recommendation of the Law Commission's 41st Report regarding anticipatory bail?",
+    "target_doc": "Gurbaksh Singh Sibbia and Others v. State of Punjab",
+    "expected_section": "Para 7",
+    "category": "legislative_history"
+  },
+  {
+    "id": "Q16",
+    "question": "Can the investigating agency seek custodial interrogation after anticipatory bail is granted?",
+    "target_doc": "Gurbaksh Singh Sibbia and Others v. State of Punjab",
+    "expected_section": "Para 31",
+    "category": "investigation"
+  },
+  {
+    "id": "Q17",
+    "question": "What checklist must police forward to the Magistrate when arresting an accused under Section 498A?",
+    "target_doc": "Arnesh Kumar v. State of Bihar and Another",
+    "expected_section": "Para 11",
+    "category": "arrest_guidelines"
+  },
+  {
+    "id": "Q18",
+    "question": "What are Category A offences under the Satender Kumar Antil judgment?",
+    "target_doc": "Satender Kumar Antil v. Central Bureau of Investigation and Another",
+    "expected_section": "Para 18",
+    "category": "offence_classification"
+  },
+  {
+    "id": "Q19",
+    "question": "Is an accused required to surrender and apply afresh for regular bail once a charge sheet is filed?",
+    "target_doc": "Sushila Aggarwal and Others v. State (NCT of Delhi) and Another",
+    "expected_section": "Para 78",
+    "category": "bail_duration"
+  },
+  {
+    "id": "Q20",
+    "question": "What principle regarding procedure established by law was held in Maneka Gandhi?",
+    "target_doc": "Article 21, Constitution of India",
+    "expected_section": "Constitutional Jurisprudence",
+    "category": "constitutional_basis"
+  },
+  {
+    "id": "Q21",
+    "question": "What are the consequences for police officers who violate Arnesh Kumar arrest directions?",
+    "target_doc": "Arnesh Kumar v. State of Bihar and Another",
+    "expected_section": "Para 11",
+    "category": "contempt"
+  },
+  {
+    "id": "Q22",
+    "question": "What factors under Section 438 indicate that an accusation was made to injure or humiliate?",
+    "target_doc": "Section 438, Code of Criminal Procedure, 1973",
+    "expected_section": "Section 438(1)",
+    "category": "legal_factors"
+  },
+  {
+    "id": "Q23",
+    "question": "Can anticipatory bail be sought for a bailable offence under Section 438?",
+    "target_doc": "Section 438, Code of Criminal Procedure, 1973",
+    "expected_section": "Section 438(1)",
+    "category": "scope"
+  },
+  {
+    "id": "Q24",
+    "question": "How do you bake a chocolate brownie cake with chocolate syrup?",
+    "target_doc": "None",
+    "expected_section": "None",
+    "category": "out_of_domain_negative"
+  },
+  {
+    "id": "Q25",
+    "question": "What is the capital city of France and its total population?",
+    "target_doc": "None",
+    "expected_section": "None",
+    "category": "out_of_domain_negative"
+  }
+]

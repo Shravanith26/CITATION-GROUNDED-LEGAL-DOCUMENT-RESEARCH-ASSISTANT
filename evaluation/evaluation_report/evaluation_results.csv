@@ -1,0 +1,26 @@
+Question ID,Category,Question,Precision@5,Recall@5,Citations Count,Citation Accuracy,Confidence,Latency (ms),Model
+Q01,legal_factors,What factors are considered while granting anticipatory bail?,0.4,1.0,4,1.0,grounded,20.6,grounded-extractive-synthesizer
+Q02,legal_limitation,Can a blanket order of anticipatory bail be granted by courts?,0.4,1.0,4,1.0,grounded,5.5,grounded-extractive-synthesizer
+Q03,bail_duration,What is the duration of an anticipatory bail order according to Sushila Aggarwal?,0.2,1.0,4,1.0,grounded,5.2,grounded-extractive-synthesizer
+Q04,bail_duration,Does anticipatory bail terminate automatically when the charge sheet is filed?,0.6,1.0,4,1.0,grounded,5.1,grounded-extractive-synthesizer
+Q05,arrest_guidelines,What directions did the Supreme Court issue in Arnesh Kumar regarding arrest?,0.2,1.0,4,1.0,grounded,5.7,grounded-extractive-synthesizer
+Q06,procedure,When is notice of appearance under Section 41A CrPC mandatory before arrest?,0.6,1.0,4,1.0,grounded,5.2,grounded-extractive-synthesizer
+Q07,conditions,What conditions can the court impose under Section 438(2) while granting anticipatory bail?,0.0,0.0,4,1.0,grounded,5.1,grounded-extractive-synthesizer
+Q08,offence_classification,How did Satender Kumar Antil categorize criminal offences for bail consideration?,0.8,1.0,4,1.0,grounded,5.6,grounded-extractive-synthesizer
+Q09,bail_cancellation,Under what provision can an order of anticipatory bail be cancelled if conditions are breached?,0.4,1.0,4,1.0,grounded,5.5,grounded-extractive-synthesizer
+Q10,constitutional_basis,How is the right to personal liberty under Article 21 connected to anticipatory bail?,0.6,1.0,4,1.0,grounded,5.9,grounded-extractive-synthesizer
+Q11,statutory_reform,Which section in the Bharatiya Nagarik Suraksha Sanhita (BNSS) 2023 replaces Section 438 CrPC?,0.2,1.0,4,1.0,grounded,5.2,grounded-extractive-synthesizer
+Q12,statutory_reform,Is the physical presence of the applicant mandatory under Section 482 of BNSS 2023?,0.6,1.0,4,1.0,grounded,4.8,grounded-extractive-synthesizer
+Q13,exceptions,What offences are excluded from the scope of anticipatory bail under Section 438(4) CrPC?,0.0,0.0,4,1.0,grounded,5.0,grounded-extractive-synthesizer
+Q14,economic_offences,How should courts treat economic offences while considering anticipatory bail under Antil guidelines?,0.2,1.0,4,1.0,grounded,5.0,grounded-extractive-synthesizer
+Q15,legislative_history,What was the recommendation of the Law Commission's 41st Report regarding anticipatory bail?,0.4,1.0,4,1.0,grounded,8.3,grounded-extractive-synthesizer
+Q16,investigation,Can the investigating agency seek custodial interrogation after anticipatory bail is granted?,0.4,1.0,4,1.0,grounded,5.0,grounded-extractive-synthesizer
+Q17,arrest_guidelines,What checklist must police forward to the Magistrate when arresting an accused under Section 498A?,0.4,1.0,4,1.0,grounded,5.1,grounded-extractive-synthesizer
+Q18,offence_classification,What are Category A offences under the Satender Kumar Antil judgment?,0.6,1.0,4,1.0,grounded,5.2,grounded-extractive-synthesizer
+Q19,bail_duration,Is an accused required to surrender and apply afresh for regular bail once a charge sheet is filed?,0.6,1.0,4,1.0,grounded,5.5,grounded-extractive-synthesizer
+Q20,constitutional_basis,What principle regarding procedure established by law was held in Maneka Gandhi?,0.0,0.0,0,0.0,insufficient_evidence,2.8,none
+Q21,contempt,What are the consequences for police officers who violate Arnesh Kumar arrest directions?,1.0,1.0,4,1.0,grounded,5.2,grounded-extractive-synthesizer
+Q22,legal_factors,What factors under Section 438 indicate that an accusation was made to injure or humiliate?,0.4,1.0,4,1.0,grounded,4.9,grounded-extractive-synthesizer
+Q23,scope,Can anticipatory bail be sought for a bailable offence under Section 438?,0.2,1.0,4,1.0,grounded,6.8,grounded-extractive-synthesizer
+Q24,out_of_domain_negative,How do you bake a chocolate brownie cake with chocolate syrup?,1.0,1.0,0,1.0,insufficient_evidence,3.3,none
+Q25,out_of_domain_negative,What is the capital city of France and its total population?,1.0,1.0,0,1.0,insufficient_evidence,2.8,none

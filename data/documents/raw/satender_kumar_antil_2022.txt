@@ -1,0 +1,22 @@
+DOCUMENT TITLE: Satender Kumar Antil v. Central Bureau of Investigation and Another
+COURT: Supreme Court of India
+CITATION: (2022) 10 SCC 51 : 2022 SCC OnLine SC 825 : AIR 2022 SC 3386
+BENCH: Sanjay Kishan Kaul and M.M. Sundresh, JJ.
+DATE OF JUDGMENT: 2022-07-11
+DOCUMENT TYPE: judgment
+
+[Para 2]
+The present proceedings arise out of persistent concerns regarding overcrowding of prisons in India, where over two-thirds of the inmate population comprises undertrial prisoners. This judgment issues comprehensive guidelines to streamline the procedure for grant of bail, emphasizing that the rule is bail and not jail.
+
+[Para 18]
+Offences are broadly categorized into four groups for the purpose of bail consideration:
+Category A: Offences punishable with imprisonment of 7 years or less not falling under Category B and D. For these offences, ordinary summons or appearance notice under Section 41A CrPC should be issued, and routine arrests avoided.
+Category B: Offences punishable with death, imprisonment for life, or imprisonment for more than 7 years. Bail applications to be decided on merits on appearance.
+Category C: Offences punishable under special Acts containing stringent negative bail conditions (such as NDPS Act S. 37, PMLA S. 45, UAPA S. 43D(5), Companies Act S. 212(6)).
+Category D: Economic offences not covered by special Acts. The gravity of financial loss to the public exchequer and systemic ramification must be considered.
+
+[Para 26]
+While dealing with applications under Section 438 of the CrPC, courts must balance the need for custodial interrogation against the fundamental right to personal liberty under Article 21. Economic offences do not fall under a single blanket rule; where the accused has cooperated with the investigation, furnished requisite documentary records, and has deep roots in society without flight risk, anticipatory bail should not be refused merely on the ground of an economic accusation.
+
+[Para 33]
+Courts must not impose mechanical or excessively harsh conditions while granting bail. Requiring local sureties or exorbitant monetary bonds that an impoverished undertrial cannot furnish defeats the very purpose of bail and violates Article 21 of the Constitution.

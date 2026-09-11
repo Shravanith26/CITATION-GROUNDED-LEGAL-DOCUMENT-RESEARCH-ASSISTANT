@@ -1,0 +1,26 @@
+DOCUMENT TITLE: Sushila Aggarwal and Others v. State (NCT of Delhi) and Another
+COURT: Supreme Court of India (Constitution Bench)
+CITATION: (2020) 5 SCC 1 : 2020 SCC OnLine SC 98 : AIR 2020 SC 831
+BENCH: Arun Mishra, Indira Banerjee, Vineet Saran, M.R. Shah, and S. Ravindra Bhat, JJ.
+DATE OF JUDGMENT: 2020-01-29
+DOCUMENT TYPE: judgment
+
+[Para 5]
+The primary questions referred to this Constitution Bench are:
+(1) Whether the protection granted to a person under Section 438 CrPC should be limited to a fixed period so as to enable the person to surrender before the trial court and seek regular bail; and
+(2) Whether the life of an anticipatory bail order should end automatically upon the filing of the charge sheet under Section 173(2) of the Code of Criminal Procedure or upon the summoning of the accused by the trial court.
+
+[Para 63]
+On question No. 1, this court holds that the protection granted under Section 438 of the Code of Criminal Procedure, 1973 should not ordinarily be limited to a fixed period. The life of an anticipatory bail order does not automatically end when the charge sheet or final report is filed by the police under Section 173 CrPC. The order of anticipatory bail can continue till the conclusion of the trial, unless there are exceptional or special circumstances requiring the court to limit its duration.
+
+[Para 74]
+Judicial discretion should be exercised flexibly. When the High Court or Sessions Court considers an application for anticipatory bail, it is open to the court to impose conditions or restrict the duration if the specific facts of the case demand such limitation. However, limiting the order of anticipatory bail invariably in all cases is contrary to the legislative intent of Section 438 CrPC and the ratio laid down in Gurbaksh Singh Sibbia.
+
+[Para 78]
+On question No. 2, the Constitution Bench clarifies that the mere filing of a charge sheet under Section 173(2) CrPC or the taking of cognizance by the magistrate does not ipso facto terminate or extinguish an order of anticipatory bail. The accused is not obligated to surrender and apply afresh for regular bail merely because the charge sheet has been submitted to the court.
+
+[Para 82]
+It is also reiterated that anticipatory bail granted to an accused can always be cancelled or recalled by the High Court or Sessions Court under Section 439(2) CrPC if the accused breaches any bail condition, tampers with witness testimonies, intimidates victims, absconds, or misuses his liberty in any manner that prejudices a fair trial.
+
+[Para 91]
+In conclusion, personal liberty guaranteed under Article 21 of the Constitution is a paramount value. Section 438 CrPC embodies this constitutional value by providing a procedural shield against unjustified arrests, while balancing the imperative requirements of state investigation and public interest.

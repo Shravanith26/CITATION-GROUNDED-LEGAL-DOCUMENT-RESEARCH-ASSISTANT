@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: citation-grounded-legal-assistant
+    runtime: python
+    plan: free
+    region: oregon
+    buildCommand: pip install -r backend/requirements.txt && python scripts/build_index.py
+    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: DEBUG
+        value: "False"
+      - key: API_HOST
+        value: 0.0.0.0
+      - key: API_PORT
+        value: "8000"
+      - key: DATABASE_URL
+        value: sqlite:///./data/metadata/documents.db
+      - key: VECTOR_DB_DIR
+        value: ./data/vector_db/chroma
+      - key: RAW_DOCUMENTS_DIR
+        value: ./data/documents/raw
+      - key: PROCESSED_DOCUMENTS_DIR
+        value: ./data/documents/processed
+      - key: LOGS_DIR
+        value: ./logs
+      - key: CHUNK_SIZE
+        value: "600"
+      - key: CHUNK_OVERLAP
+        value: "100"
+      - key: TOP_K_RETRIEVAL
+        value: "5"
+      - key: SIMILARITY_THRESHOLD
+        value: "0.20"
+      - key: ENABLE_RERANKING
+        value: "True"

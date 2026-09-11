@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  legal-assistant:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: legal_research_assistant
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data/metadata:/app/data/metadata
+      - ./data/vector_db:/app/data/vector_db
+      - ./logs:/app/logs
+    environment:
+      - APP_ENV=production
+      - DEBUG=False
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+    restart: unless-stopped

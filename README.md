@@ -4,6 +4,7 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109+-009688.svg)](https://fastapi.tiangolo.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Architecture: RAG](https://img.shields.io/badge/Architecture-RAG%20with%20Citations-orange.svg)]()
+[![Deploy to Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/deploy?repository=Shravanith26/CITATION-GROUNDED-LEGAL-DOCUMENT-RESEARCH-ASSISTANT&branch=main&mainModule=app_streamlit.py)
 
 An AI-powered legal document research assistant that answers natural-language legal questions using a **Retrieval-Augmented Generation (RAG)** architecture grounded strictly in authentic judicial precedents, statutory provisions, and bare acts. Every substantive assertion includes a **verifiable inline citation** linked directly to the original legal passage to eliminate AI hallucinations.
 

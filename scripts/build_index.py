@@ -19,11 +19,17 @@ def build_index():
     print(" Building Knowledge Index for Legal Documents")
     print("============================================================")
 
-    init_db()
+    from app.database.database import Base, engine
+    Base.metadata.drop_all(bind=engine)
+    Base.metadata.create_all(bind=engine)
+    fallback_file = os.path.join(settings.VECTOR_DB_DIR, "fallback_vectors.json")
+    if os.path.exists(fallback_file):
+        os.remove(fallback_file)
+
     db = SessionLocal()
     doc_service = DocumentService()
 
-    raw_files = sorted(glob.glob(os.path.join(settings.RAW_DOCUMENTS_DIR, "*.*")))
+    raw_files = sorted(glob.glob(os.path.join(settings.RAW_DOCUMENTS_DIR, "*.txt")))
     if not raw_files:
         print(f"[WARN] No raw document files found in {settings.RAW_DOCUMENTS_DIR}")
         return

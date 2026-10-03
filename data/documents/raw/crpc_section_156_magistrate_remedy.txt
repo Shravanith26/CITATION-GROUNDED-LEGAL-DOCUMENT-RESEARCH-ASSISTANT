@@ -1,0 +1,16 @@
+DOCUMENT TITLE: Section 156(3), Code of Criminal Procedure, 1973 (Magistrate's Power to Order Investigation)
+COURT: Parliament of India / Supreme Court Precedents
+CITATION: Central Act No. 2 of 1974, Section 156(3) and (2008) 2 SCC 409 (Sakiri Vasu v. State of U.P.)
+BENCH: Statutory Procedure & Supreme Court Precedents
+DATE OF JUDGMENT: 1974-01-25
+DOCUMENT TYPE: statute
+
+[Section 156(1) and (2): Police Officer's Power to Investigate Cognizable Offence]
+Any officer in charge of a police station may, without the order of a Magistrate, investigate any cognizable case which a Court having jurisdiction over the local area within the limits of such station would have power to inquire into or try under the provisions of Chapter XIII.
+No proceeding of a police officer in any such case shall at any stage be called in question on the ground that the case was one which such officer was not empowered under this section to investigate.
+
+[Section 156(3): Judicial Magistrate's Power to Order FIR and Investigation]
+Any Magistrate empowered under section 190 may order such an investigation as above-mentioned.
+Remedy when Police Station Refuses FIR:
+If a citizen's complaint regarding theft, stolen property, fraud, or cheating is rejected or ignored by the local police station and the Superintendent of Police under Section 154(3) fails to act, the aggrieved person can file an application under Section 156(3) CrPC before the jurisdictional Judicial Magistrate.
+Landmark Ruling: In Sakiri Vasu v. State of U.P. (2008) 2 SCC 409, the Supreme Court held that Section 156(3) CrPC provides a comprehensive, effective alternative remedy. The Magistrate has wide powers to ensure proper investigation, including ordering the registration of an FIR and monitoring the progress of the investigation.

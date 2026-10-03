@@ -1,0 +1,40 @@
+Registration & Lalita Kumari Ruling)
+COURT: Supreme Court of India / Parliament of India
+CITATION: Central Act No. 2 of 1974, Section 154 and (2014) 2 SCC 1 (Lalita Kumari v. Govt. of U.P.)
+BENCH: 5-Judge Constitution Bench (P. Sathasivam, C.J., B.S. Chauhan, Ranjana P. Desai, Ranjan
+Gogoi, S.A. Bobde, JJ.)
+DATE OF JUDGMENT: 2013-11-12
+DOCUMENT TYPE: statute
+[Section 154(1): Mandatory Registration of First Information Report (FIR)]
+Every information relating to the commission of a cognizable offence (such as theft of a ring, robbery, assault,
+cheating, or burglary), if given orally to an officer in charge of a police station, shall be reduced to writing by him
+or under his direction, and be read over to the informant; and every such information, whether given in writing or
+reduced to writing as aforesaid, shall be signed by the person giving it, and the substance thereof shall be
+entered in a book to be kept by such officer in such form as the State Government may prescribe in this behalf.
+A copy of the information as recorded under sub-section (1) shall be given forthwith, free of cost, to the
+informant.
+[Lalita Kumari Landmark Directives on FIR Registration]
+In Lalita Kumari v. Govt. of U.P. (2014) 2 SCC 1, the 5-Judge Constitution Bench of the Supreme Court held:
+1. Registration of FIR is mandatory under Section 154 of the Code if the information discloses commission of a
+cognizable offence and no preliminary inquiry is permissible in such a situation.
+2. If the information received does not disclose a cognizable offence but indicates the necessity for an inquiry, a
+preliminary inquiry may be conducted only to ascertain whether cognizable offence is disclosed or not.
+3. Cases involving theft of personal property, stolen rings, gold, vehicles, or physical robbery unequivocally
+disclose a cognizable offence; police officers cannot refuse to register an FIR on the grounds of lack of
+jurisdiction or delay.
+4. Concept of Zero FIR: A victim or informant can approach any police station to lodge an FIR (Zero FIR)
+irrespective of where the theft occurred. The police station must record the FIR, assign a serial number zero,
+and immediately transfer the case to the jurisdictional police station for investigation.
+[Section 154(3): Remedy when Police Refuse to Register FIR]
+Any person aggrieved by a refusal on the part of an officer in charge of a police station to record the information
+referred to in sub-section (1) may send the substance of such information, in writing and by post, to the
+Superintendent of Police concerned who, if satisfied that such information discloses the commission of a
+cognizable offence, shall either investigate the case himself or direct an investigation to be made by any police
+officer subordinate to him.
+
+
+[Section 173, Bharatiya Nagarik Suraksha Sanhita, 2023 (BNSS Reform on FIR & e-FIR)]
+Section 173 of BNSS 2023 replaces Section 154 CrPC, formalizing electronic FIRs (e-FIRs) and Zero FIR:
+Sub-section (1) permits every information relating to a cognizable offence to be given orally or by electronic
+communication (e-FIR), irrespective of the area where the crime was committed. Where information is given
+electronically, it shall be taken on record upon being signed within three days by the person giving it.

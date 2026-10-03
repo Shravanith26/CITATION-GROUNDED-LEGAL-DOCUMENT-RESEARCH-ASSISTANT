@@ -1,0 +1,13 @@
+DOCUMENT TITLE: Sections 66C and 66D, Information Technology Act, 2000 (Identity Theft & Cyber Fraud)
+COURT: Parliament of India / Statutory Cyber Code
+CITATION: Central Act No. 21 of 2000, Sections 66C, 66D
+BENCH: Statutory Cyber Legislation
+DATE OF JUDGMENT: 2000-06-09
+DOCUMENT TYPE: statute
+
+[Section 66C: Punishment for Identity Theft]
+Whoever, fraudulently or dishonestly make use of the electronic signature, password or any other unique identification feature of any other person, shall be punished with imprisonment of either description for a term which may extend to three years and shall also be liable to fine which may extend to rupees one lakh.
+
+[Section 66D: Punishment for Cheating by Personation using Computer Resource]
+Whoever, by means of any communication device or computer resource, cheats by personating, shall be punished with imprisonment of either description for a term which may extend to three years and shall also be liable to fine which may extend to one lakh rupees.
+Reporting Cyber Crime: Victims of online banking scams, stolen UPI funds, phishing, or digital identity theft can lodge a formal complaint on the National Cyber Crime Reporting Portal (cybercrime.gov.in) or call helpline 1930 for financial fraud, following which an FIR under Section 66C/66D IT Act read with Section 420 IPC is registered.

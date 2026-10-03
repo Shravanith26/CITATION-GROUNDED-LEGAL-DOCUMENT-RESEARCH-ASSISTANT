@@ -78,16 +78,26 @@ class LLMService:
         for idx, chunk in enumerate(chunks[:4], start=1):
             doc_title = chunk.document_title or "Legal Precedent"
             sec = chunk.section_ref or f"Passage {idx}"
-            text = chunk.text.strip()
+            raw_text = chunk.text.strip()
 
-            # Extract substantive sentence
-            sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+', text) if len(s.strip()) > 30]
+            # Clean out file metadata headers if present in chunk
+            clean_text = re.sub(r'DOCUMENT TITLE:.*?\n', '', raw_text)
+            clean_text = re.sub(r'(COURT|CITATION|BENCH|DATE OF JUDGMENT|DOCUMENT TYPE):.*?\n', '', clean_text)
+            clean_text = re.sub(r'\[Section [^\]]+\]', '', clean_text).strip()
+
+            # Extract substantive sentences
+            sentences = [
+                s.strip() for s in re.split(r'(?<=[.!?])\s+', clean_text)
+                if len(s.strip()) > 35 and not any(s.strip().startswith(p) for p in ("DOCUMENT", "COURT", "CITATION", "BENCH", "DATE", "DOCUMENT TYPE", "["))
+            ]
             if sentences:
-                key_sentence = sentences[0]
-                # If there is a second clarifying sentence, append it
-                if len(sentences) > 1 and len(key_sentence) < 100:
-                    key_sentence += " " + sentences[1]
-                synthesized_points.append(f"• According to {doc_title} ({sec}), {key_sentence} [{idx}]")
+                # Pick the most informative sentence (preferring ones that define rights, obligations, or procedures)
+                best_sentence = sentences[0]
+                for s in sentences:
+                    if any(kw in s.lower() for kw in ("whoever", "punished", "shall", "held that", "mandatory", "offence", "cognizable", "fir", "ring")):
+                        best_sentence = s
+                        break
+                synthesized_points.append(f"• **{doc_title} ({sec})**: {best_sentence} [{idx}]")
 
         if not synthesized_points:
             return "Information not found in the provided legal context."

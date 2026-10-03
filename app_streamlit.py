@@ -227,10 +227,10 @@ def get_rag_service():
     init_db()
     db = SessionLocal()
     try:
-        count = db.query(DocumentModel).count()
-        if count == 0:
+        existing_titles = {d.title for d in db.query(DocumentModel).all()}
+        raw_files = sorted(glob.glob(os.path.join(settings.RAW_DOCUMENTS_DIR, "*.txt")))
+        if len(existing_titles) < len(raw_files):
             doc_svc = DocumentService()
-            raw_files = sorted(glob.glob(os.path.join(settings.RAW_DOCUMENTS_DIR, "*.txt")))
             for f in raw_files:
                 try:
                     doc_svc.ingest_document_file(file_path=f, db=db)
@@ -318,20 +318,20 @@ with tab_qa:
     
     col_p1, col_p2, col_p3 = st.columns(3)
     with col_p1:
+        if st.button("💍 Stolen Ring / Property (Theft & FIR)", use_container_width=True, help="S. 378/379 IPC & S. 154 CrPC FIR"):
+            st.session_state["query_text"] = "My ring is stolen. What case can I file for it under criminal law and how to register an FIR?"
         if st.button("⚖️ Anticipatory Bail Principles", use_container_width=True, help="Sibbia 1980 Constitution Bench guidelines"):
             st.session_state["query_text"] = "What factors and principles guide the grant of anticipatory bail under Section 438 as per Sibbia?"
-        if st.button("🚨 Arnesh Kumar Arrest Rules", use_container_width=True, help="Mandatory S. 41A arrest directions"):
-            st.session_state["query_text"] = "What mandatory checklist and guidelines were established in Arnesh Kumar before arresting an accused?"
 
     with col_p2:
+        if st.button("💸 Cheating & Online Scam (S. 420)", use_container_width=True, help="S. 420 IPC & Cyber fraud under IT Act"):
+            st.session_state["query_text"] = "What case can I file if someone cheated me of money under Section 420 IPC or through cyber fraud?"
         if st.button("⏱️ Duration of Anticipatory Bail", use_container_width=True, help="Sushila Aggarwal 2020 landmark ruling"):
             st.session_state["query_text"] = "Does anticipatory bail continue until the conclusion of trial or end upon charge sheet filing?"
-        if st.button("📊 4 Offence Categories in Antil", use_container_width=True, help="Satender Kumar Antil 2022 classification"):
-            st.session_state["query_text"] = "What are the four categories of offences (A, B, C, D) laid down in Satender Kumar Antil v. CBI?"
 
     with col_p3:
-        if st.button("📜 BNSS 2023 vs CrPC 1973", use_container_width=True, help="Section 482 BNSS comparative analysis"):
-            st.session_state["query_text"] = "How does Section 482 of BNSS 2023 differ from Section 438 of CrPC regarding physical presence in court?"
+        if st.button("🚨 Arnesh Kumar Arrest Rules", use_container_width=True, help="Mandatory S. 41A arrest directions"):
+            st.session_state["query_text"] = "What mandatory checklist and guidelines were established in Arnesh Kumar before arresting an accused?"
         if st.button("🛡️ Negative Test (Zero-Hallucination)", use_container_width=True, help="Out-of-scope query to prove refusal"):
             st.session_state["query_text"] = "What are the rules for filing a patent infringement suit under the Patents Act?"
 

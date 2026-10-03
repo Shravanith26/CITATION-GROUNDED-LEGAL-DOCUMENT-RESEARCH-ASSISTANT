@@ -29,8 +29,19 @@ class RetrievalService:
         if threshold is None:
             threshold = self.similarity_threshold
 
-        query_logger.info(f"Retrieving top-{k} chunks for query: '{query_text}'")
-        query_vector = self.embedding_service.embed_text(query_text)
+        import re
+        expanded_query = query_text
+        if re.search(r'\b(stollen|stole|stolen|robbed|snatched|thief|theft)\b', query_text, re.IGNORECASE):
+            expanded_query += " theft stolen property movable property section 378 section 379 ipc fir section 154 crpc"
+        if re.search(r'\b(ring|jewellery|gold|phone|mobile|purse|vehicle|bike|car)\b', query_text, re.IGNORECASE):
+            expanded_query += " movable property theft section 378"
+        if re.search(r'\b(cheated|scam|fraud|scammed)\b', query_text, re.IGNORECASE):
+            expanded_query += " cheating fraud section 415 section 420 ipc"
+        if re.search(r'\b(fir|police complaint|report to police)\b', query_text, re.IGNORECASE):
+            expanded_query += " first information report section 154 crpc mandatory lalita kumari"
+
+        query_logger.info(f"Retrieving top-{k} chunks for query: '{query_text}' (expanded: '{expanded_query}')")
+        query_vector = self.embedding_service.embed_text(expanded_query)
 
         chunks: List[Chunk] = []
 

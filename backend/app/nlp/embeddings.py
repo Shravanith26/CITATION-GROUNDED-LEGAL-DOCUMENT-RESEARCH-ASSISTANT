@@ -38,13 +38,18 @@ class EmbeddingService:
             from sklearn.feature_extraction.text import TfidfVectorizer
             self.vectorizer = TfidfVectorizer(ngram_range=(1, 2), max_features=384)
             self.dimension = 384
-            # Pre-fit on legal vocabulary seeds so transform works immediately
+            # Pre-fit on comprehensive legal vocabulary seeds so transform works immediately
             seed_corpus = [
                 "anticipatory bail non bailable arrest session court high court section 438 crpc bnss",
                 "personal liberty article 21 constitution interrogation condition police custody",
                 "charge sheet investigation witness tampering flight risk offence gravity antecedents",
                 "judgment supreme court precedent magistrate summons notice section 41 41a",
-                "economic offences dowry prohibition harassment marital discord guidelines"
+                "economic offences dowry prohibition harassment marital discord guidelines",
+                "theft stolen stollen steal stealing movable property jewellery gold ring watch purse money without consent section 378 section 379 ipc bns 303",
+                "first information report fir section 154 crpc section 173 bnss police station register cognizable offence lalita kumari zero fir copy informant",
+                "cheating fraud deceive dishonest delivery of property section 415 section 420 ipc section 318 bns scam financial deceit",
+                "magistrate complaint section 156 156 3 crpc order police investigation sakiri vasu superintendent of police refusal",
+                "cyber crime identity theft password electronic signature computer resource section 66c section 66d information technology act online fraud"
             ]
             self.vectorizer.fit(seed_corpus)
 

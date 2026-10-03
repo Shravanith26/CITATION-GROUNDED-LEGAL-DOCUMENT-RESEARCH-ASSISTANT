@@ -1,0 +1,43 @@
+Nyaya Sanhita, 2023)
+BENCH: Statutory Criminal Code
+DATE OF JUDGMENT: 1860-10-06
+DOCUMENT TYPE: statute
+[Section 378: Definition and Ingredients of Theft]
+Whoever, intending to take dishonestly any movable property out of the possession of any person without that
+person's consent, moves that property in order to such taking, is said to commit theft.
+Explanation 1: A thing so long as it is attached to the earth, not being movable property, is not the subject of
+theft; but it becomes capable of being the subject of theft as soon as it is severed from the earth.
+Explanation 2: A moving effected by the same act which affects the severance may be a theft.
+Explanation 3: A person is said to cause a thing to move by removing an obstacle which prevented it from
+moving or by separating it from any other thing, as well as by actually moving it.
+Explanation 4: A person who by any means causes an animal to move, is said to move that animal, and to
+move everything which, in consequence of the motion so caused, is moved by that animal.
+Explanation 5: The consent mentioned in the definition may be express or implied, and may be given either by
+the person in possession, or by any person having for that purpose authority either express or implied.
+Illustrations:
+(a) A cuts down a tree on Z's ground, with the intention of dishonestly taking the tree out of Z's possession
+without Z's consent. Here, as soon as A has severed the tree in order to such taking, he has committed theft.
+(b) A puts a bait for dogs in his pocket, and thus induces Z's dog to follow it. Here, if A's intention be dishonestly
+to take the dog out of Z's possession without Z's consent, A has committed theft as soon as Z's dog has begun
+to follow A.
+(c) A meets a bullock carrying a box of treasure. He drives the bullock in a certain direction, in order that he may
+dishonestly take the treasure. As soon as the bullock begins to move, A has committed theft of the treasure.
+(d) If any person takes an article of jewellery, gold ring, diamond ring, watch, purse, money, mobile phone, or
+any valuable movable property belonging to another person without consent and with dishonest intention, such
+act constitutes the offence of theft.
+[Section 379: Punishment for Theft]
+Whoever commits theft shall be punished with imprisonment of either description for a term which may extend
+to three years, or with fine, or with both.
+
+
+Legal Classification: The offence of theft under Section 379 IPC is a cognizable offence, meaning the police
+have the authority and statutory duty to register an FIR and arrest the accused without a warrant. It is triable by
+any Magistrate and is a non-bailable offence.
+[Section 303, Bharatiya Nyaya Sanhita, 2023 (BNS Reform)]
+Section 303 of the Bharatiya Nyaya Sanhita, 2023 replaces Sections 378 and 379 of the Indian Penal Code.
+Sub-section (1) defines theft with identical essential ingredients (dishonest taking of movable property out of
+possession without consent). Sub-section (2) provides that whoever commits theft shall be punished with
+imprisonment of either description for a term which may extend to three years, or with fine, or with both. In
+cases of community service for petty theft where the value of stolen property is less than five thousand rupees
+and the person is a first-time offender, the court may sentence the offender to community service upon return of
+the stolen property.

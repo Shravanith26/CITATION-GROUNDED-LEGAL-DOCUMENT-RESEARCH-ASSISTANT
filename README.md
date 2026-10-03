@@ -1,10 +1,14 @@
-# Citation-Grounded Legal Document Research Assistant
+# ⚖️ Citation-Grounded Legal Document Research Assistant
 
+> ### 🌐 **Live Web Application**: [citation-grounded-legal-document-research-assistant.streamlit.app](https://citation-grounded-legal-document-research-assistant.streamlit.app/)
+> **Click the link above to test the system live in your browser with zero installation!**
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit%20Cloud-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://citation-grounded-legal-document-research-assistant.streamlit.app/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Shravanith26/CITATION-GROUNDED-LEGAL-DOCUMENT-RESEARCH-ASSISTANT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109+-009688.svg)](https://fastapi.tiangolo.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Architecture: RAG](https://img.shields.io/badge/Architecture-RAG%20with%20Citations-orange.svg)]()
-[![Deploy to Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/deploy?repository=Shravanith26/CITATION-GROUNDED-LEGAL-DOCUMENT-RESEARCH-ASSISTANT&branch=main&mainModule=app_streamlit.py)
 
 An AI-powered legal document research assistant that answers natural-language legal questions using a **Retrieval-Augmented Generation (RAG)** architecture grounded strictly in authentic judicial precedents, statutory provisions, and bare acts. Every substantive assertion includes a **verifiable inline citation** linked directly to the original legal passage to eliminate AI hallucinations.
 

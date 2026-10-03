@@ -1,9 +1,9 @@
 # ⚖️ Citation-Grounded Legal Document Research Assistant
 
-> ### 🌐 **Live Web Application**: [citation-grounded-legal-document-research-assistant.streamlit.app](https://citation-grounded-legal-document-research-assistant.streamlit.app/)
-> **Click the link above to test the system live in your browser with zero installation!**
+> ### 🌐 **Live Web Application**: [lung-aus-indoor-elder.trycloudflare.com](https://lung-aus-indoor-elder.trycloudflare.com)
+> **Click the link above to test the system live in your browser with ZERO login or sign-in required!**
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit%20Cloud-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://citation-grounded-legal-document-research-assistant.streamlit.app/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-success?style=for-the-badge&logo=cloudflare&logoColor=white)](https://lung-aus-indoor-elder.trycloudflare.com)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Shravanith26/CITATION-GROUNDED-LEGAL-DOCUMENT-RESEARCH-ASSISTANT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109+-009688.svg)](https://fastapi.tiangolo.com/)

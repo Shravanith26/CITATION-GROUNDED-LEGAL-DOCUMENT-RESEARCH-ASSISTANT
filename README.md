@@ -1,17 +1,19 @@
 # ⚖️ Citation-Grounded Legal Document Research Assistant
 
-> ### 🌐 **Live Web Application (Active Now)**: [myself-princeton-achieved-thus.trycloudflare.com](https://myself-princeton-achieved-thus.trycloudflare.com)
-> **Open the link above to test the system live in your browser — zero login or sign-in required!**
+> ### 🌟 **Official Permanent Web Application**: [citation-grounded-legal-document-research-assistant.streamlit.app](https://citation-grounded-legal-document-research-assistant.streamlit.app/)
+> **Hosted 24/7 on Streamlit Community Cloud — Accessible worldwide on mobile & desktop with zero login required!**
 >
-> 🚀 **Permanent 24/7 Hosting Guide**: See [DEPLOYMENT.md](DEPLOYMENT.md) for 1-click Streamlit Community Cloud and Hugging Face Spaces instructions that never expire.
+> 🌐 **Alternative Active Live Mirror**: [myself-princeton-achieved-thus.trycloudflare.com](https://myself-princeton-achieved-thus.trycloudflare.com)
+>
+> 🚀 **Permanent Hosting & Setup Guide**: See [DEPLOYMENT.md](DEPLOYMENT.md) for 1-click Streamlit Cloud, Hugging Face, and Docker setup.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-success?style=for-the-badge&logo=cloudflare&logoColor=white)](https://myself-princeton-achieved-thus.trycloudflare.com)
-
-[![Streamlit App](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://share.streamlit.io)
+[![Official Streamlit Cloud App](https://img.shields.io/badge/Streamlit%20Cloud-24%2F7%20Online-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://citation-grounded-legal-document-research-assistant.streamlit.app/)
+[![Live Mirror](https://img.shields.io/badge/Live%20Mirror-Online-success?style=for-the-badge&logo=cloudflare&logoColor=white)](https://myself-princeton-achieved-thus.trycloudflare.com)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Shravanith26/CITATION-GROUNDED-LEGAL-DOCUMENT-RESEARCH-ASSISTANT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Architecture: RAG](https://img.shields.io/badge/Architecture-RAG%20with%20Citations-orange.svg)]()
+
 
 
 An AI-powered legal document research assistant that answers natural-language legal questions using a **Retrieval-Augmented Generation (RAG)** architecture grounded strictly in authentic judicial precedents, statutory provisions, and bare acts. Every substantive assertion includes a **verifiable inline citation** linked directly to the original legal passage to eliminate AI hallucinations.

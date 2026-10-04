@@ -25,4 +25,8 @@ def get_db():
 def init_db():
     """Initializes all database tables."""
     import app.database.models  # Ensure models are imported
+    if "sqlite" in settings.DATABASE_URL:
+        db_path = settings.DATABASE_URL.replace("sqlite:///", "")
+        os.makedirs(os.path.dirname(db_path), exist_ok=True)
     Base.metadata.create_all(bind=engine)
+

@@ -1,14 +1,17 @@
 # ⚖️ Citation-Grounded Legal Document Research Assistant
 
-> ### 🌐 **Live Web Application**: [alliance-administration-andreas-fair.trycloudflare.com](https://alliance-administration-andreas-fair.trycloudflare.com)
-> **Click the link above to test the system live in your browser with ZERO login or sign-in required!**
+> ### 🌐 **Live Web Application (Active Now)**: [posts-somewhat-responded-surrounding.trycloudflare.com](https://posts-somewhat-responded-surrounding.trycloudflare.com)
+> **Open the link above to test the system live in your browser — zero login or sign-in required!**
+>
+> 🚀 **Permanent 24/7 Hosting Guide**: See [DEPLOYMENT.md](DEPLOYMENT.md) for 1-click Streamlit Community Cloud and Hugging Face Spaces instructions that never expire.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-success?style=for-the-badge&logo=cloudflare&logoColor=white)](https://alliance-administration-andreas-fair.trycloudflare.com)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-success?style=for-the-badge&logo=cloudflare&logoColor=white)](https://posts-somewhat-responded-surrounding.trycloudflare.com)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://share.streamlit.io)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Shravanith26/CITATION-GROUNDED-LEGAL-DOCUMENT-RESEARCH-ASSISTANT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.109+-009688.svg)](https://fastapi.tiangolo.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Architecture: RAG](https://img.shields.io/badge/Architecture-RAG%20with%20Citations-orange.svg)]()
+
 
 An AI-powered legal document research assistant that answers natural-language legal questions using a **Retrieval-Augmented Generation (RAG)** architecture grounded strictly in authentic judicial precedents, statutory provisions, and bare acts. Every substantive assertion includes a **verifiable inline citation** linked directly to the original legal passage to eliminate AI hallucinations.
 

@@ -1,18 +1,17 @@
 # ⚖️ Citation-Grounded Legal Document Research Assistant
 
-> ### 🌟 **Official Permanent Web Application**: [citation-grounded-legal-document-research-assistant.streamlit.app](https://citation-grounded-legal-document-research-assistant.streamlit.app/)
-> **Hosted 24/7 on Streamlit Community Cloud — Accessible worldwide on mobile & desktop with zero login required!**
+> ### 🌐 **Live Web Application (Active & Working Now)**: [myself-princeton-achieved-thus.trycloudflare.com](https://myself-princeton-achieved-thus.trycloudflare.com)
+> **Click the link above to test the system live in your browser — zero login or sign-in required!**
 >
-> 🌐 **Alternative Active Live Mirror**: [myself-princeton-achieved-thus.trycloudflare.com](https://myself-princeton-achieved-thus.trycloudflare.com)
->
-> 🚀 **Permanent Hosting & Setup Guide**: See [DEPLOYMENT.md](DEPLOYMENT.md) for 1-click Streamlit Cloud, Hugging Face, and Docker setup.
+> 🚀 **1-Click Permanent Cloud Deployment**: Click the badge below to deploy 24/7 on Streamlit Cloud with zero configuration:  
+> [![Deploy to Streamlit Cloud](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/deploy?repository=Shravanith26/CITATION-GROUNDED-LEGAL-DOCUMENT-RESEARCH-ASSISTANT&branch=main&mainModule=streamlit_app.py)
 
-[![Official Streamlit Cloud App](https://img.shields.io/badge/Streamlit%20Cloud-24%2F7%20Online-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://citation-grounded-legal-document-research-assistant.streamlit.app/)
-[![Live Mirror](https://img.shields.io/badge/Live%20Mirror-Online-success?style=for-the-badge&logo=cloudflare&logoColor=white)](https://myself-princeton-achieved-thus.trycloudflare.com)
+[![Live App](https://img.shields.io/badge/Live%20App-Online%20Now-success?style=for-the-badge&logo=cloudflare&logoColor=white)](https://myself-princeton-achieved-thus.trycloudflare.com)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Shravanith26/CITATION-GROUNDED-LEGAL-DOCUMENT-RESEARCH-ASSISTANT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Architecture: RAG](https://img.shields.io/badge/Architecture-RAG%20with%20Citations-orange.svg)]()
+
 
 
 

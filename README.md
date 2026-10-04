@@ -1,11 +1,12 @@
 # ⚖️ Citation-Grounded Legal Document Research Assistant
 
-> ### 🌐 **Live Web Application (Active Now)**: [posts-somewhat-responded-surrounding.trycloudflare.com](https://posts-somewhat-responded-surrounding.trycloudflare.com)
+> ### 🌐 **Live Web Application (Active Now)**: [myself-princeton-achieved-thus.trycloudflare.com](https://myself-princeton-achieved-thus.trycloudflare.com)
 > **Open the link above to test the system live in your browser — zero login or sign-in required!**
 >
 > 🚀 **Permanent 24/7 Hosting Guide**: See [DEPLOYMENT.md](DEPLOYMENT.md) for 1-click Streamlit Community Cloud and Hugging Face Spaces instructions that never expire.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-success?style=for-the-badge&logo=cloudflare&logoColor=white)](https://posts-somewhat-responded-surrounding.trycloudflare.com)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-success?style=for-the-badge&logo=cloudflare&logoColor=white)](https://myself-princeton-achieved-thus.trycloudflare.com)
+
 [![Streamlit App](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://share.streamlit.io)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Shravanith26/CITATION-GROUNDED-LEGAL-DOCUMENT-RESEARCH-ASSISTANT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)

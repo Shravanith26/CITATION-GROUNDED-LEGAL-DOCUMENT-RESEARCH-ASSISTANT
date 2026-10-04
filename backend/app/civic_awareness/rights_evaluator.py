@@ -62,6 +62,7 @@ class RightsEvaluator:
         return self.situations.get(situation_id)
 
     def evaluate_situation(self, situation_id: str, follow_up_answers: Optional[Dict[str, str]] = None) -> Dict[str, Any]:
+
         """
         Evaluate situation and produce structured output in strict prescribed order:
         1. Situation Summary
@@ -240,3 +241,7 @@ class RightsEvaluator:
             "potentially_applicable": potential,
             "depends_on_facts": fact_dependent
         }
+
+    # Backward compatibility alias
+    evaluate = evaluate_situation
+

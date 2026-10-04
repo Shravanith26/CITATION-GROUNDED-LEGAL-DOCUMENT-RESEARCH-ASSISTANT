@@ -126,3 +126,7 @@ class QuizEngine:
         if not s:
             return None
         return s.get("educational_breakdown")
+
+    # Backward compatibility alias
+    get_educational_deep_dive = get_educational_breakdown
+

@@ -1,9 +1,9 @@
 # ⚖️ Citation-Grounded Legal Document Research Assistant
 
-> ### 🌐 **Live Web Application**: [lung-aus-indoor-elder.trycloudflare.com](https://lung-aus-indoor-elder.trycloudflare.com)
+> ### 🌐 **Live Web Application**: [alliance-administration-andreas-fair.trycloudflare.com](https://alliance-administration-andreas-fair.trycloudflare.com)
 > **Click the link above to test the system live in your browser with ZERO login or sign-in required!**
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-success?style=for-the-badge&logo=cloudflare&logoColor=white)](https://lung-aus-indoor-elder.trycloudflare.com)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-success?style=for-the-badge&logo=cloudflare&logoColor=white)](https://alliance-administration-andreas-fair.trycloudflare.com)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Shravanith26/CITATION-GROUNDED-LEGAL-DOCUMENT-RESEARCH-ASSISTANT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109+-009688.svg)](https://fastapi.tiangolo.com/)
@@ -45,7 +45,37 @@ graph TD
 
 ---
 
-## 2. Directory Structure
+## 2. Civic Awareness & Citizen Rights System
+
+In addition to deep academic legal research, LexisGrounded features a comprehensive, non-lawyer friendly citizen advisory engine:
+
+### 🛡️ Feature 1: "My Rights in This Situation" (Instant Practical Diagnostic)
+- **38 Everyday Indian Legal Situations**: Covers phone/chain snatching, digital arrest scams, unauthorized UPI transfers, morphed intimate photo extortion, workplace harassment (POSH), college ragging, tenant lockouts, road accidents, medical malpractice, police refusal of FIR, and *"I don't know what happened legally"*.
+- **Emergency Danger Triage**: Automatically flags life-threatening situations with unified emergency hotlines (`112`, `1090`, `1098`, `1930`, `14567`).
+- **Dynamic Follow-Up Questions**: 1–2 quick clarifying questions tailored to the specific event.
+- **Strict 12-Point Practical Roadmap**:
+  1. Plain-English Situation Summary
+  2. Immediate Danger Alert Banner
+  3. Possible Citizen Rights (e.g. Zero FIR, female officer recording, free medical care)
+  4. Current Statutory Provisions (BNS 2023, BNSS 2023, BSA 2023, Special Acts)
+  5. Step-by-Step Priority Action Checklist
+  6. Actionable Evidence Preservation Checklist
+  7. Official Reporting Forums & Portals
+  8. Remedies Against Police Refusal (BNSS Section 173(4), 175(3), DLSA, BNS Section 199)
+  9. Know the Difference (Constitutional vs Criminal vs Civil vs Regulatory vs Consumer)
+  10. Confidence & Fact-Dependent Uncertainty Breakdown
+  11. Related Legal Issues
+  12. Educational & NALSA Legal Aid Disclaimer
+
+### 🎯 Feature 2: Interactive Case Studies & Legal Literacy Quiz
+- **16 Realistic Indian Case Studies**: Spanning 13 civic categories and 4 difficulty levels (*Basic*, *Intermediate*, *Advanced*, *Emergency*).
+- **Interactive 5-Question Quizzes**: Tests legal classification, applicable rights, immediate action, evidence preservation, and proper reporting forums.
+- **Instant Scoring & Civic Badges**: Earn badges such as *🏆 Civic Law Champion*, *⚖️ Legal Literacy Expert*, and *📘 Informed Citizen* with detailed question-by-question explanations.
+- **12-Point Educational Deep-Dives**: Comprehensive case analysis covering landmark Supreme Court precedents (*Lalita Kumari*, *D.K. Basu*, *Arnesh Kumar*, *Parmanand Katara*, *Vishaka*, *Jacob Mathew*, etc.), common legal misconceptions, and victim compensation schemes.
+
+---
+
+## 3. Directory Structure
 
 ```
 Citation-Grounded-Legal-Document-Research-Assistant/

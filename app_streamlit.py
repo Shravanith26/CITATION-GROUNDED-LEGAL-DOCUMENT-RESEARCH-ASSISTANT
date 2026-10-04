@@ -19,12 +19,20 @@ from app.database.models import DocumentModel
 from app.services.rag_service import RAGService
 from app.services.retrieval_service import RetrievalService
 from app.services.document_service import DocumentService
+from app.civic_awareness import (
+    RightsEvaluator,
+    QuizEngine,
+    SITUATIONS_DB,
+    SITUATION_CATEGORIES,
+    SCENARIOS_DB,
+    SCENARIO_CATEGORIES
+)
 
 # -----------------------------------------------------------------------------
 # Streamlit Page Config & Custom Styling
 # -----------------------------------------------------------------------------
 st.set_page_config(
-    page_title="LexisGrounded | Legal Document Research Assistant",
+    page_title="LexisGrounded | Legal Document Research & Citizen Rights Assistant",
     page_icon="⚖️",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -62,7 +70,7 @@ st.markdown("""
     .hero-subtitle {
         font-size: 1.05rem;
         color: #94a3b8;
-        max-width: 800px;
+        max-width: 900px;
         line-height: 1.5;
         margin-bottom: 16px;
     }
@@ -85,6 +93,41 @@ st.markdown("""
         background: rgba(16, 185, 129, 0.15);
         border: 1px solid rgba(16, 185, 129, 0.3);
         color: #34d399;
+    }
+
+    /* Civic Advisory Cards */
+    .advisory-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 20px 24px;
+        margin-bottom: 16px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+    .step-item {
+        background: #f8fafc;
+        border-left: 3px solid #3b82f6;
+        padding: 10px 14px;
+        margin-bottom: 8px;
+        border-radius: 0 8px 8px 0;
+        font-size: 0.95rem;
+        color: #1e293b;
+    }
+    .statute-tag {
+        background: #eff6ff;
+        color: #1d4ed8;
+        border: 1px solid #bfdbfe;
+        border-radius: 8px;
+        padding: 8px 12px;
+        font-size: 0.88rem;
+        margin-bottom: 8px;
+    }
+    .channel-card {
+        background: #f8fafc;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin-bottom: 10px;
     }
 
     /* Legal Answer Card */
@@ -240,7 +283,12 @@ def get_rag_service():
         db.close()
     return RAGService(), RetrievalService(), DocumentService()
 
+@st.cache_resource
+def get_civic_services():
+    return RightsEvaluator(), QuizEngine()
+
 rag_service, retrieval_service, doc_service = get_rag_service()
+rights_evaluator, quiz_engine = get_civic_services()
 
 # -----------------------------------------------------------------------------
 # Top Hero Banner
@@ -251,14 +299,14 @@ st.markdown("""
         <span>⚖️</span> LexisGrounded Legal Assistant
     </div>
     <div class="hero-subtitle">
-        AI-Powered Legal Document Research Assistant with <strong>Strict Citation Grounding</strong> over Indian Supreme Court Precedents, Criminal Procedure Code (CrPC), BNSS 2023, and Constitutional Liberty Jurisprudence.
+        AI-Powered Legal Research & Citizen Rights Advisory with <strong>Strict Citation Grounding</strong> over Indian Supreme Court Precedents, Bharatiya Nyaya Sanhita (BNS), BNSS 2023, and Constitutional Jurisprudence.
     </div>
     <div class="hero-badges">
         <span class="hero-badge hero-badge-highlight">🟢 System Operational</span>
-        <span class="hero-badge">🏛️ 7 Landmark Precedents & Acts</span>
-        <span class="hero-badge">🛡️ Zero-Hallucination Guardrails</span>
-        <span class="hero-badge">📑 Verifiable Paragraph Citations</span>
-        <span class="hero-badge">⏱️ Sub-250ms Semantic Retrieval</span>
+        <span class="hero-badge">🛡️ 38 Everyday Civic Situations</span>
+        <span class="hero-badge">🎯 16 Interactive Case Studies & Quizzes</span>
+        <span class="hero-badge">📜 Current BNS, BNSS & BSA 2023</span>
+        <span class="hero-badge">📑 Verifiable Citations</span>
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -289,17 +337,31 @@ with st.sidebar:
         db.close()
 
     st.divider()
+    st.markdown("### 📞 National Emergency Helplines")
+    st.markdown("""
+    - **Emergency Unified**: `112`
+    - **Women Distress**: `1090` / `181`
+    - **Cyber Financial Fraud**: `1930`
+    - **Child Helpline**: `1098`
+    - **Senior Citizens (Elderline)**: `14567`
+    - **National Consumer Helpline**: `1915`
+    - **Free Legal Aid (NALSA)**: `15100`
+    """)
+
+    st.divider()
     st.markdown("### 🛡️ Why Zero-Hallucination?")
     st.info(
-        "Standard LLMs (like general ChatGPT) frequently invent case citations and sections. "
-        "LexisGrounded forces the model to respond exclusively from retrieved source text, mapping each statement directly to original paragraph numbers."
+        "Standard LLMs frequently invent nonexistent citations. "
+        "LexisGrounded forces every claim to map directly to real paragraph numbers in our verified corpus and current statutory provisions."
     )
     st.markdown("[🌐 View GitHub Repository](https://github.com/Shravanith26/CITATION-GROUNDED-LEGAL-DOCUMENT-RESEARCH-ASSISTANT)")
 
 # -----------------------------------------------------------------------------
 # Main Application Navigation Tabs
 # -----------------------------------------------------------------------------
-tab_qa, tab_docs, tab_eval, tab_about = st.tabs([
+tab_rights, tab_quiz, tab_qa, tab_docs, tab_eval, tab_about = st.tabs([
+    "🛡️ My Rights in This Situation",
+    "🎯 Case Studies & Legal Quiz",
     "🔍 Legal Research Q&A",
     "📚 Document Library & PDFs",
     "📈 Benchmark Evaluation",
@@ -307,7 +369,390 @@ tab_qa, tab_docs, tab_eval, tab_about = st.tabs([
 ])
 
 # -----------------------------------------------------------------------------
-# TAB 1: Legal Q&A Assistant
+# TAB 1: My Rights in This Situation (Everyday Citizen Diagnostic)
+# -----------------------------------------------------------------------------
+with tab_rights:
+    st.markdown("#### 🛡️ What Happened to You? Instant Rights & Action Guide")
+    st.markdown(
+        "Select your real-life situation from **38 common Indian legal and civic scenarios** below, or choose "
+        "*'I don't know what happened legally'*. Receive structured, step-by-step guidance under the **Bharatiya Nyaya Sanhita (BNS)**, "
+        "**BNSS 2023**, and Special Acts in seconds."
+    )
+
+    # Quick Access Preset Chips
+    st.markdown("##### ⚡ Quick Select Common Situations:")
+    q_col1, q_col2, q_col3, q_col4 = st.columns(4)
+    with q_col1:
+        if st.button("📱 Stolen Phone / Belongings", use_container_width=True):
+            st.session_state["selected_situation_id"] = "theft_belongings"
+        if st.button("🚨 Digital Arrest Video Scam", use_container_width=True):
+            st.session_state["selected_situation_id"] = "digital_arrest_scam"
+    with q_col2:
+        if st.button("💍 Chain / Bag Snatching", use_container_width=True):
+            st.session_state["selected_situation_id"] = "chain_bag_snatching"
+        if st.button("💳 Unauthorized UPI Transfer", use_container_width=True):
+            st.session_state["selected_situation_id"] = "upi_bank_fraud"
+    with q_col3:
+        if st.button("📸 Morphed Photo Blackmail", use_container_width=True):
+            st.session_state["selected_situation_id"] = "sextortion_private_photos"
+        if st.button("🏠 Landlord Locked Me Out", use_container_width=True):
+            st.session_state["selected_situation_id"] = "landlord_tenant_eviction"
+    with q_col4:
+        if st.button("🚗 Road Accident Hit-and-Run", use_container_width=True):
+            st.session_state["selected_situation_id"] = "road_accident_hit_and_run"
+        if st.button("❓ Unsure — Help Me Diagnose", use_container_width=True):
+            st.session_state["selected_situation_id"] = "general_diagnostic_unsure"
+
+    st.markdown("---")
+
+    # Search & Category Filter
+    col_filter1, col_filter2 = st.columns([1, 2])
+    with col_filter1:
+        selected_cat = st.selectbox(
+            "Filter by Category:",
+            ["All Categories"] + rights_evaluator.get_categories(),
+            key="rights_cat_filter"
+        )
+    with col_filter2:
+        situation_search = st.text_input(
+            "Or search by keywords (e.g. extortion, tenant, child, cheque, police refusal):",
+            key="rights_search_query"
+        )
+
+    # Filtered Situations List
+    all_sits = rights_evaluator.get_all_situations()
+    if selected_cat != "All Categories":
+        all_sits = [s for s in all_sits if s["category"] == selected_cat]
+    if situation_search.strip():
+        matched_ids = {s["id"] for s in rights_evaluator.search_situations(situation_search.strip())}
+        all_sits = [s for s in all_sits if s["id"] in matched_ids]
+
+    if not all_sits:
+        all_sits = rights_evaluator.get_all_situations()
+
+    situation_options = {s["id"]: f"[{s['category']}] {s['title']}" for s in all_sits}
+    
+    # Determine default index
+    default_id = st.session_state.get("selected_situation_id", "theft_belongings")
+    if default_id not in situation_options:
+        default_id = list(situation_options.keys())[0]
+
+    current_idx = list(situation_options.keys()).index(default_id)
+
+    selected_sit_id = st.selectbox(
+        "Select your specific situation:",
+        options=list(situation_options.keys()),
+        format_func=lambda x: situation_options[x],
+        index=current_idx,
+        key="situation_selector_dropdown"
+    )
+    st.session_state["selected_situation_id"] = selected_sit_id
+
+    sit_data = rights_evaluator.get_situation(selected_sit_id)
+
+    # Minimal Follow-up questions
+    follow_up_answers = {}
+    if sit_data and sit_data.get("follow_up_questions"):
+        st.markdown("##### 📝 Quick Follow-up Questions (Clarify your situation):")
+        f_cols = st.columns(len(sit_data["follow_up_questions"]))
+        for i, fq in enumerate(sit_data["follow_up_questions"]):
+            with f_cols[i % len(f_cols)]:
+                ans = st.radio(fq["q"], fq["options"], key=f"fu_{selected_sit_id}_{i}")
+                follow_up_answers[fq["q"]] = ans
+
+    # Evaluation Trigger
+    evaluate_clicked = st.button("⚡ Evaluate My Rights & Legal Action Plan", type="primary", use_container_width=True)
+
+    # Auto-render when selected or clicked
+    if selected_sit_id:
+        advice = rights_evaluator.evaluate_situation(selected_sit_id, follow_up_answers)
+
+        st.markdown("---")
+        
+        # 1. Situation Summary
+        st.markdown(f"### 📋 Situation Assessment: {advice['situation_title']}")
+        st.info(f"**Situation Summary**: {advice['1_situation_summary']}")
+
+        # 2. Immediate Danger Alert Banner
+        danger = advice["2_immediate_danger"]
+        if danger["is_emergency"]:
+            st.error(danger["banner_text"])
+        else:
+            st.success(danger["banner_text"])
+
+        # 3. Possible Rights & 4. Possible Legal Provisions (in side-by-side columns)
+        col_r1, col_r2 = st.columns(2)
+        with col_r1:
+            st.markdown("#### 🛡️ Your Possible Rights")
+            for r in advice["3_possible_rights"]:
+                st.markdown(f"- {r}")
+
+        with col_r2:
+            st.markdown("#### 📜 Possible Legal Provisions")
+            st.markdown(f"**Classification**: `{' • '.join(advice['4_legal_provisions']['classification'])}`")
+            for p in advice["4_legal_provisions"]["statutes"]:
+                st.markdown(f"""
+                <div class="statute-tag">
+                    <strong>{p['act']}</strong> — {p['section']}<br>
+                    <span style="font-size: 0.8rem; color: #475569;">{p['deals_with']}</span>
+                </div>
+                """, unsafe_allow_html=True)
+            
+            if advice["4_legal_provisions"]["constitutional"]:
+                st.markdown("**Constitutional Guarantees Genuinely Applicable:**")
+                for c in advice["4_legal_provisions"]["constitutional"]:
+                    st.markdown(f"- **{c['article']} ({c['name']})**: {c['connection']}")
+
+        st.divider()
+
+        # 5. What to Do Right Now & 6. Evidence to Preserve
+        col_act1, col_act2 = st.columns(2)
+        with col_act1:
+            st.markdown("#### ⚡ What to Do Right Now (Priority Checklist)")
+            for idx, step in enumerate(advice["5_what_to_do_right_now"], 1):
+                st.markdown(f"""
+                <div class="step-item">
+                    <strong>Step {idx}:</strong> {step}
+                </div>
+                """, unsafe_allow_html=True)
+
+        with col_act2:
+            st.markdown("#### 📑 Critical Evidence to Preserve")
+            for ev in advice["6_evidence_to_preserve"]:
+                st.checkbox(ev, key=f"ev_{selected_sit_id}_{ev[:15]}", value=False)
+
+        st.divider()
+
+        # 7. Where to Report & 8. What If Police Refuse
+        col_rep1, col_rep2 = st.columns(2)
+        with col_rep1:
+            st.markdown("#### 🏛️ Where to Report")
+            for ch in advice["7_where_to_report"]:
+                st.markdown(f"""
+                <div class="channel-card">
+                    <div style="font-weight: 700; color: #0f172a;">{ch['authority']}</div>
+                    <div style="color: #2563eb; font-weight: 600; font-size: 0.9rem;">📞 {ch['contact']}</div>
+                    <div style="font-size: 0.85rem; color: #475569; margin-top: 4px;">{ch['details']}</div>
+                </div>
+                """, unsafe_allow_html=True)
+
+        with col_rep2:
+            st.markdown("#### 🚫 What If Police Refuse to Take Action?")
+            st.warning(advice["8_police_refusal_remedies"])
+            st.markdown("""
+            **Statutory Escalation Path:**
+            1. **Section 173(4) BNSS**: Send written complaint by registered post to Superintendent of Police (SP).
+            2. **Section 175(3) BNSS**: Petition Judicial Magistrate for court-monitored investigation order.
+            3. **Section 199 BNS**: Criminal prosecution of police officers who willfully disobey statutory duty.
+            """)
+
+        st.divider()
+
+        # 9. Know the Difference & 10. Confidence Breakdown
+        col_diff1, col_diff2 = st.columns(2)
+        with col_diff1:
+            st.markdown("#### ⚖️ Know the Difference")
+            st.info(advice["9_know_the_difference"])
+
+        with col_diff2:
+            st.markdown("#### 🔍 Confidence & Uncertainty Breakdown")
+            cb = advice["10_confidence_uncertainty"]
+            st.markdown(f"**Overall Assessment**: {cb['overall_assessment']}")
+            with st.expander("View Confirmed vs Fact-Dependent Provisions"):
+                st.markdown("**Confirmed Provisions:**")
+                for cp in cb["confirmed_provisions"]:
+                    st.markdown(f"- {cp}")
+                st.markdown("**Depends on Facts:**")
+                for df in cb["depends_on_facts"]:
+                    st.markdown(f"- {df}")
+
+        # 11. Related Legal Issues
+        if advice["11_related_legal_issues"]:
+            st.markdown("##### 🔗 Related Legal Issues & Topics:")
+            pills = " ".join([f"`{iss}`" for iss in advice["11_related_legal_issues"]])
+            st.markdown(pills)
+
+        # 12. Educational Disclaimer
+        st.caption(advice["12_educational_disclaimer"])
+
+# -----------------------------------------------------------------------------
+# TAB 2: Case Studies & Legal Literacy Quiz
+# -----------------------------------------------------------------------------
+with tab_quiz:
+    st.markdown("#### 🎯 Interactive Case-Study & Legal Literacy Quiz")
+    st.markdown(
+        "Test your legal knowledge and civic awareness across **16 realistic India-specific case studies** "
+        "spanning 13 civic categories and 4 difficulty levels. Answer 5 practical legal questions per scenario "
+        "to earn your Civic Badge and unlock complete 12-point educational deep-dives."
+    )
+
+    # Filter by Category & Difficulty
+    f_cat_col, f_diff_col = st.columns(2)
+    with f_cat_col:
+        quiz_cat = st.selectbox(
+            "Select Category:",
+            ["All Categories"] + quiz_engine.get_categories(),
+            key="quiz_cat_select"
+        )
+    with f_diff_col:
+        quiz_diff = st.selectbox(
+            "Select Difficulty Level:",
+            ["All Difficulties"] + quiz_engine.get_difficulties(),
+            key="quiz_diff_select"
+        )
+
+    # Filtered Scenarios
+    filtered_scenarios = quiz_engine.filter_scenarios(quiz_cat, quiz_diff)
+    if not filtered_scenarios:
+        filtered_scenarios = quiz_engine.get_all_scenarios()
+
+    sc_options = {s["id"]: f"[{s['difficulty'].upper()}] {s['title']} ({s['category']})" for s in filtered_scenarios}
+    
+    selected_sc_id = st.selectbox(
+        "Choose a Case Study Scenario:",
+        options=list(sc_options.keys()),
+        format_func=lambda x: sc_options[x],
+        key="quiz_scenario_selector"
+    )
+
+    scenario = quiz_engine.get_scenario(selected_sc_id)
+
+    if scenario:
+        # Scenario Banner Card
+        diff_color = {
+            "Emergency": "#ef4444",
+            "Advanced": "#8b5cf6",
+            "Intermediate": "#3b82f6",
+            "Basic": "#10b981"
+        }.get(scenario["difficulty"], "#3b82f6")
+
+        st.markdown(f"""
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 6px solid {diff_color}; border-radius: 12px; padding: 20px; margin-top: 14px; margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span style="font-size: 1.25rem; font-weight: 800; color: #0f172a;">📖 Case Study: {scenario['title']}</span>
+                <span style="background: {diff_color}; color: white; border-radius: 12px; padding: 4px 12px; font-size: 0.75rem; font-weight: 700;">{scenario['difficulty']}</span>
+            </div>
+            <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 12px;">Category: <strong>{scenario['category']}</strong> | 5 Interactive Questions</div>
+            <div style="font-family: 'Newsreader', Georgia, serif; font-size: 1.1rem; line-height: 1.7; color: #1e293b; background: #ffffff; padding: 16px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                {scenario['story']}
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        mode_choice = st.radio(
+            "Select Mode:",
+            ["🎮 Interactive 5-Question Quiz Mode", "📖 Comprehensive 12-Point Educational Breakdown"],
+            horizontal=True,
+            key=f"mode_{selected_sc_id}"
+        )
+
+        if "Interactive" in mode_choice:
+            st.markdown("### ❓ Test Your Civic & Legal Knowledge")
+            st.caption("Select the best legal course of action for each question:")
+
+            user_answers = {}
+            for q_idx, q in enumerate(scenario["questions"]):
+                st.markdown(f"**Q{q_idx + 1}: {q['question']}**")
+                choice = st.radio(
+                    f"Options for Q{q_idx + 1}:",
+                    options=list(range(len(q["options"]))),
+                    format_func=lambda i, opts=q["options"]: opts[i],
+                    key=f"quiz_{selected_sc_id}_{q_idx}",
+                    label_visibility="collapsed"
+                )
+                user_answers[q_idx] = choice
+                st.write("")
+
+            if st.button("📝 Submit Answers & Score My Knowledge", type="primary", use_container_width=True):
+                eval_res = quiz_engine.evaluate_quiz(selected_sc_id, user_answers)
+
+                st.markdown("---")
+                st.markdown("### 📊 Quiz Results & Performance Analysis")
+
+                # Score Metric Card
+                sc_col1, sc_col2, sc_col3 = st.columns([1, 1, 2])
+                sc_col1.metric("Your Score", f"{eval_res['correct_count']} / {eval_res['total_questions']}")
+                sc_col2.metric("Accuracy", f"{eval_res['percentage']}%")
+                sc_col3.markdown(f"""
+                <div style="padding: 10px 16px; background: #f8fafc; border-radius: 8px; border: 1px solid #cbd5e1;">
+                    <div style="font-size: 1.1rem; font-weight: 800;">{eval_res['tier']}</div>
+                    <div style="font-size: 0.85rem; color: #475569;">{eval_res['feedback']}</div>
+                </div>
+                """, unsafe_allow_html=True)
+
+                st.divider()
+                st.markdown("#### 📑 Question-by-Question Detailed Review")
+
+                for item in eval_res["question_evaluations"]:
+                    is_c = item["is_correct"]
+                    border_c = "#10b981" if is_c else "#ef4444"
+                    badge_c = "✅ Correct" if is_c else "❌ Incorrect"
+                    
+                    st.markdown(f"""
+                    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 5px solid {border_c}; border-radius: 10px; padding: 16px; margin-bottom: 14px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+                            <span style="font-weight: 700; color: #0f172a;">Q{item['question_index'] + 1}: {item['question']}</span>
+                            <span style="font-weight: 700; color: {border_c}; font-size: 0.9rem;">{badge_c}</span>
+                        </div>
+                        <div style="font-size: 0.9rem; color: #334155; margin-bottom: 4px;">
+                            <strong>Your Answer:</strong> {item['user_choice_text']}
+                        </div>
+                        <div style="font-size: 0.9rem; color: #047857; margin-bottom: 8px;">
+                            <strong>Correct Answer:</strong> {item['correct_choice_text']}
+                        </div>
+                        <div style="background: #f8fafc; padding: 10px 12px; border-radius: 6px; font-size: 0.88rem; color: #1e293b; border: 1px solid #f1f5f9;">
+                            💡 <strong>Legal Rationale:</strong> {item['explanation']}
+                        </div>
+                    </div>
+                    """, unsafe_allow_html=True)
+
+        # Educational Breakdown Section (Available in both modes)
+        if "Educational" in mode_choice or st.checkbox("🔍 Expand Complete 12-Point Educational Breakdown for this Case", value=("Educational" in mode_choice), key=f"eb_toggle_{selected_sc_id}"):
+            eb = scenario["educational_breakdown"]
+            st.markdown("### 🎓 Complete 12-Point Educational Legal Breakdown")
+
+            b_c1, b_c2 = st.columns(2)
+            with b_c1:
+                st.markdown("##### 1. Case Summary")
+                st.write(eb["case_summary"])
+
+                st.markdown("##### 2. Legal Classification")
+                st.info(eb["legal_classification"])
+
+                st.markdown("##### 3. Constitutional Analysis")
+                st.write(eb["constitutional_analysis"])
+
+                st.markdown("##### 4. Statutory Provisions")
+                st.write(eb["statutory_provisions"])
+
+                st.markdown("##### 5. Landmark Court Precedents")
+                st.success(eb["court_precedents"])
+
+                st.markdown("##### 6. Immediate Action Protocol")
+                st.write(eb["immediate_action_protocol"])
+
+            with b_c2:
+                st.markdown("##### 7. Evidence Preservation Protocol")
+                st.write(eb["evidence_preservation_protocol"])
+
+                st.markdown("##### 8. Proper Reporting Forums")
+                st.write(eb["reporting_forums"])
+
+                st.markdown("##### 9. Remedies Against Police Refusal")
+                st.warning(eb["remedies_against_refusal"])
+
+                st.markdown("##### 10. Common Misconceptions Debunked")
+                st.error(eb["common_misconceptions"])
+
+                st.markdown("##### 11. Victim Support & Compensation")
+                st.write(eb["victim_support_compensation"])
+
+                st.markdown("##### 12. Key Takeaways")
+                for kt in eb["key_takeaways"]:
+                    st.markdown(f"- {kt}")
+
+# -----------------------------------------------------------------------------
+# TAB 3: Legal Q&A Assistant (Existing Q&A with Strict Grounding)
 # -----------------------------------------------------------------------------
 with tab_qa:
     st.markdown("#### 💬 Ask a Legal Research Question")
@@ -423,7 +868,7 @@ with tab_qa:
                 )
 
 # -----------------------------------------------------------------------------
-# TAB 2: Document Repository & Authentic PDFs
+# TAB 4: Document Repository & Authentic PDFs
 # -----------------------------------------------------------------------------
 with tab_docs:
     st.markdown("#### 📚 Curated Indian Legal Corpus")
@@ -480,7 +925,7 @@ with tab_docs:
         db.close()
 
 # -----------------------------------------------------------------------------
-# TAB 3: Benchmark Evaluation
+# TAB 5: Benchmark Evaluation
 # -----------------------------------------------------------------------------
 with tab_eval:
     st.markdown("#### 📈 Empirical Benchmark Evaluation")
@@ -523,7 +968,7 @@ with tab_eval:
         st.dataframe(df_eval, use_container_width=True)
 
 # -----------------------------------------------------------------------------
-# TAB 4: Viva Defense & Project Architecture Guide
+# TAB 6: Viva Defense & Project Architecture Guide
 # -----------------------------------------------------------------------------
 with tab_about:
     st.markdown("#### 🎓 Project Defense & Final-Year Viva Questions")

@@ -277,8 +277,8 @@ Copy the repository URL from GitHub and run:
 # Rename branch to main
 git branch -M main
 
-# Add remote origin (replace with your GitHub URL)
-git remote add origin https://github.com/YOUR_USERNAME/Citation-Grounded-Legal-Document-Research-Assistant.git
+# Add remote origin
+git remote add origin https://github.com/Shravanith26/CITATION-GROUNDED-LEGAL-DOCUMENT-RESEARCH-ASSISTANT.git
 
 # Push to GitHub
 git push -u origin main

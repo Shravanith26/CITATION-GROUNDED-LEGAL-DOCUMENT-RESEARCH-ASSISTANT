@@ -1,12 +1,12 @@
-# ⚖️ Citation-Grounded Legal Document Research Assistant
+# ‚öñÔ∏è Citation-Grounded Legal Document Research Assistant
 
-> ### 🌐 **Live Web Application (Active & Working Now)**: [prohibited-recommended-gsm-intellectual.trycloudflare.com](https://prohibited-recommended-gsm-intellectual.trycloudflare.com)
-> **Click the link above to test the system live in your browser — zero login or sign-in required!**
+> ### üåê **Permanent Cloud Web Application (24/7 Online)**: [shravanith26-citation-grounded-legal-docum-streamlit-app-zyuvex.streamlit.app](https://shravanith26-citation-grounded-legal-docum-streamlit-app-zyuvex.streamlit.app/)
+> **Live Demo Mirror**: [range-commitment-new-kentucky.trycloudflare.com](https://range-commitment-new-kentucky.trycloudflare.com)
 >
-> 🚀 **1-Click Permanent Cloud Deployment**: Click the badge below to deploy 24/7 on Streamlit Cloud with zero configuration:  
-> [![Deploy to Streamlit Cloud](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/deploy?repository=Shravanith26/CITATION-GROUNDED-LEGAL-DOCUMENT-RESEARCH-ASSISTANT&branch=main&mainModule=streamlit_app.py)
+> üöÄ **Official 24/7 Cloud Deployment**: Zero configuration required!  
+> [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://shravanith26-citation-grounded-legal-docum-streamlit-app-zyuvex.streamlit.app/)
 
-[![Live App](https://img.shields.io/badge/Live%20App-Online%20Now-success?style=for-the-badge&logo=cloudflare&logoColor=white)](https://prohibited-recommended-gsm-intellectual.trycloudflare.com)
+[![Live App](https://img.shields.io/badge/Live%20App-Online%2024%2F7-success?style=for-the-badge&logo=streamlit&logoColor=white)](https://shravanith26-citation-grounded-legal-docum-streamlit-app-zyuvex.streamlit.app/)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Shravanith26/CITATION-GROUNDED-LEGAL-DOCUMENT-RESEARCH-ASSISTANT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -54,10 +54,10 @@ graph TD
 
 In addition to deep academic legal research, LexisGrounded features a comprehensive, non-lawyer friendly citizen advisory engine:
 
-### 🛡️ Feature 1: "My Rights in This Situation" (Instant Practical Diagnostic)
+### üõ°Ô∏è Feature 1: "My Rights in This Situation" (Instant Practical Diagnostic)
 - **38 Everyday Indian Legal Situations**: Covers phone/chain snatching, digital arrest scams, unauthorized UPI transfers, morphed intimate photo extortion, workplace harassment (POSH), college ragging, tenant lockouts, road accidents, medical malpractice, police refusal of FIR, and *"I don't know what happened legally"*.
 - **Emergency Danger Triage**: Automatically flags life-threatening situations with unified emergency hotlines (`112`, `1090`, `1098`, `1930`, `14567`).
-- **Dynamic Follow-Up Questions**: 1–2 quick clarifying questions tailored to the specific event.
+- **Dynamic Follow-Up Questions**: 1‚Äì2 quick clarifying questions tailored to the specific event.
 - **Strict 12-Point Practical Roadmap**:
   1. Plain-English Situation Summary
   2. Immediate Danger Alert Banner
@@ -72,10 +72,10 @@ In addition to deep academic legal research, LexisGrounded features a comprehens
   11. Related Legal Issues
   12. Educational & NALSA Legal Aid Disclaimer
 
-### 🎯 Feature 2: Interactive Case Studies & Legal Literacy Quiz
+### üéØ Feature 2: Interactive Case Studies & Legal Literacy Quiz
 - **16 Realistic Indian Case Studies**: Spanning 13 civic categories and 4 difficulty levels (*Basic*, *Intermediate*, *Advanced*, *Emergency*).
 - **Interactive 5-Question Quizzes**: Tests legal classification, applicable rights, immediate action, evidence preservation, and proper reporting forums.
-- **Instant Scoring & Civic Badges**: Earn badges such as *🏆 Civic Law Champion*, *⚖️ Legal Literacy Expert*, and *📘 Informed Citizen* with detailed question-by-question explanations.
+- **Instant Scoring & Civic Badges**: Earn badges such as *üèÜ Civic Law Champion*, *‚öñÔ∏è Legal Literacy Expert*, and *üìò Informed Citizen* with detailed question-by-question explanations.
 - **12-Point Educational Deep-Dives**: Comprehensive case analysis covering landmark Supreme Court precedents (*Lalita Kumari*, *D.K. Basu*, *Arnesh Kumar*, *Parmanand Katara*, *Vishaka*, *Jacob Mathew*, etc.), common legal misconceptions, and victim compensation schemes.
 
 ---
@@ -84,61 +84,61 @@ In addition to deep academic legal research, LexisGrounded features a comprehens
 
 ```
 Citation-Grounded-Legal-Document-Research-Assistant/
-├── frontend/                     # Modern React 18 + Vite + Tailwind CSS Single Page App
-│   ├── public/documents/         # Public static legal document files
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── Chat/             # QueryInput, AnswerDisplay, QueryHistory, ChatInterface
-│   │   │   ├── Citations/        # CitationList, CitationItem, CitationPanel
-│   │   │   ├── SourceViewer/     # SourceViewer, SourcePassage
-│   │   │   └── Documents/        # DocumentBrowser, DocumentList, Filters, Search
-│   │   ├── pages/                # ChatPage, DocumentsPage, SourcePage
-│   │   ├── services/api.js       # REST API service client
-│   │   ├── context/AppContext.jsx# Global state management
-│   │   ├── App.jsx               # Navigation bar & layout
-│   │   ├── main.jsx              # React DOM root
-│   │   └── index.css             # Tailwind styling & badges
-│   ├── package.json
-│   ├── vite.config.js
-│   └── tailwind.config.js
-├── backend/                      # High-performance FastAPI backend
-│   ├── app/
-│   │   ├── main.py               # Application entrypoint & embedded web dashboard
-│   │   ├── api/                  # REST routers: /query, /documents, /chunks, /logs
-│   │   ├── services/             # Extraction, chunking, embeddings, indexing, RAG, citations
-│   │   ├── models/               # Domain data models
-│   │   ├── schemas/              # Pydantic validation schemas
-│   │   ├── database/             # SQLAlchemy SQLite engine & models
-│   │   ├── rag/                  # Prompts, context builder, citation mapper
-│   │   ├── nlp/                  # SentenceTransformers embeddings & LegalNER
-│   │   ├── config/config.py      # App settings & environment loader
-│   │   └── utils/                # Logging, file validation, error handlers
-│   ├── tests/                    # Comprehensive unit & integration tests
-│   ├── requirements.txt          # Python dependencies
-│   └── run.py                    # Server runner script
-├── data/
-│   ├── documents/raw/            # Authentic Indian Supreme Court judgments & Bare Acts
-│   ├── documents/processed/      # Cleaned and normalized text
-│   ├── metadata/documents.db     # SQLite metadata and audit store
-│   └── vector_db/chroma/         # ChromaDB persistent vector index
-├── evaluation/
-│   ├── test_questions/           # 25 benchmark legal evaluation questions
-│   ├── labeled_chunks/           # Ground truth relevance labels
-│   ├── results/                  # Retrieval, answer, and citation benchmark metrics
-│   ├── evaluation_report/        # Generated CSV audit and evaluation report
-│   └── evaluate.py               # Automated evaluation pipeline
-├── logs/                         # Rotating logs (ingestion, indexing, query, error)
-├── scripts/                      # CLI automation scripts
-│   ├── build_index.py            # Builds vector index from raw corpus
-│   ├── ingest_documents.py       # Ingests a specific file
-│   ├── preprocess_documents.py   # Cleans all raw files
-│   ├── build_embeddings.py       # Tests embedding generation
-│   └── export_logs.py            # Exports query audit logs to CSV
-├── .env                          # Configuration file
-├── .gitignore                    # Git exclusions
-├── README.md                     # Documentation & viva guide
-├── run_project.bat               # Windows single-click run script
-└── run_project.sh                # macOS/Linux run script
+‚îú‚îÄ‚îÄ frontend/                     # Modern React 18 + Vite + Tailwind CSS Single Page App
+‚îÇ   ‚îú‚îÄ‚îÄ public/documents/         # Public static legal document files
+‚îÇ   ‚îú‚îÄ‚îÄ src/
+‚îÇ   ‚îÇ   ‚îú‚îÄ‚îÄ components/
+‚îÇ   ‚îÇ   ‚îÇ   ‚îú‚îÄ‚îÄ Chat/             # QueryInput, AnswerDisplay, QueryHistory, ChatInterface
+‚îÇ   ‚îÇ   ‚îÇ   ‚îú‚îÄ‚îÄ Citations/        # CitationList, CitationItem, CitationPanel
+‚îÇ   ‚îÇ   ‚îÇ   ‚îú‚îÄ‚îÄ SourceViewer/     # SourceViewer, SourcePassage
+‚îÇ   ‚îÇ   ‚îÇ   ‚îî‚îÄ‚îÄ Documents/        # DocumentBrowser, DocumentList, Filters, Search
+‚îÇ   ‚îÇ   ‚îú‚îÄ‚îÄ pages/                # ChatPage, DocumentsPage, SourcePage
+‚îÇ   ‚îÇ   ‚îú‚îÄ‚îÄ services/api.js       # REST API service client
+‚îÇ   ‚îÇ   ‚îú‚îÄ‚îÄ context/AppContext.jsx# Global state management
+‚îÇ   ‚îÇ   ‚îú‚îÄ‚îÄ App.jsx               # Navigation bar & layout
+‚îÇ   ‚îÇ   ‚îú‚îÄ‚îÄ main.jsx              # React DOM root
+‚îÇ   ‚îÇ   ‚îî‚îÄ‚îÄ index.css             # Tailwind styling & badges
+‚îÇ   ‚îú‚îÄ‚îÄ package.json
+‚îÇ   ‚îú‚îÄ‚îÄ vite.config.js
+‚îÇ   ‚îî‚îÄ‚îÄ tailwind.config.js
+‚îú‚îÄ‚îÄ backend/                      # High-performance FastAPI backend
+‚îÇ   ‚îú‚îÄ‚îÄ app/
+‚îÇ   ‚îÇ   ‚îú‚îÄ‚îÄ main.py               # Application entrypoint & embedded web dashboard
+‚îÇ   ‚îÇ   ‚îú‚îÄ‚îÄ api/                  # REST routers: /query, /documents, /chunks, /logs
+‚îÇ   ‚îÇ   ‚îú‚îÄ‚îÄ services/             # Extraction, chunking, embeddings, indexing, RAG, citations
+‚îÇ   ‚îÇ   ‚îú‚îÄ‚îÄ models/               # Domain data models
+‚îÇ   ‚îÇ   ‚îú‚îÄ‚îÄ schemas/              # Pydantic validation schemas
+‚îÇ   ‚îÇ   ‚îú‚îÄ‚îÄ database/             # SQLAlchemy SQLite engine & models
+‚îÇ   ‚îÇ   ‚îú‚îÄ‚îÄ rag/                  # Prompts, context builder, citation mapper
+‚îÇ   ‚îÇ   ‚îú‚îÄ‚îÄ nlp/                  # SentenceTransformers embeddings & LegalNER
+‚îÇ   ‚îÇ   ‚îú‚îÄ‚îÄ config/config.py      # App settings & environment loader
+‚îÇ   ‚îÇ   ‚îî‚îÄ‚îÄ utils/                # Logging, file validation, error handlers
+‚îÇ   ‚îú‚îÄ‚îÄ tests/                    # Comprehensive unit & integration tests
+‚îÇ   ‚îú‚îÄ‚îÄ requirements.txt          # Python dependencies
+‚îÇ   ‚îî‚îÄ‚îÄ run.py                    # Server runner script
+‚îú‚îÄ‚îÄ data/
+‚îÇ   ‚îú‚îÄ‚îÄ documents/raw/            # Authentic Indian Supreme Court judgments & Bare Acts
+‚îÇ   ‚îú‚îÄ‚îÄ documents/processed/      # Cleaned and normalized text
+‚îÇ   ‚îú‚îÄ‚îÄ metadata/documents.db     # SQLite metadata and audit store
+‚îÇ   ‚îî‚îÄ‚îÄ vector_db/chroma/         # ChromaDB persistent vector index
+‚îú‚îÄ‚îÄ evaluation/
+‚îÇ   ‚îú‚îÄ‚îÄ test_questions/           # 25 benchmark legal evaluation questions
+‚îÇ   ‚îú‚îÄ‚îÄ labeled_chunks/           # Ground truth relevance labels
+‚îÇ   ‚îú‚îÄ‚îÄ results/                  # Retrieval, answer, and citation benchmark metrics
+‚îÇ   ‚îú‚îÄ‚îÄ evaluation_report/        # Generated CSV audit and evaluation report
+‚îÇ   ‚îî‚îÄ‚îÄ evaluate.py               # Automated evaluation pipeline
+‚îú‚îÄ‚îÄ logs/                         # Rotating logs (ingestion, indexing, query, error)
+‚îú‚îÄ‚îÄ scripts/                      # CLI automation scripts
+‚îÇ   ‚îú‚îÄ‚îÄ build_index.py            # Builds vector index from raw corpus
+‚îÇ   ‚îú‚îÄ‚îÄ ingest_documents.py       # Ingests a specific file
+‚îÇ   ‚îú‚îÄ‚îÄ preprocess_documents.py   # Cleans all raw files
+‚îÇ   ‚îú‚îÄ‚îÄ build_embeddings.py       # Tests embedding generation
+‚îÇ   ‚îî‚îÄ‚îÄ export_logs.py            # Exports query audit logs to CSV
+‚îú‚îÄ‚îÄ .env                          # Configuration file
+‚îú‚îÄ‚îÄ .gitignore                    # Git exclusions
+‚îú‚îÄ‚îÄ README.md                     # Documentation & viva guide
+‚îú‚îÄ‚îÄ run_project.bat               # Windows single-click run script
+‚îî‚îÄ‚îÄ run_project.sh                # macOS/Linux run script
 ```
 
 ---

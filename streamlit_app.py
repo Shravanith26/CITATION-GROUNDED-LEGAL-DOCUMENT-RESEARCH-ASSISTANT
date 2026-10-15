@@ -46,36 +46,59 @@ st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;600&display=swap');
 
-    html, body, [class*="css"] {
+    /* Global Pitch Black Theme & Typography */
+    html, body, [class*="css"], .stApp {
+        background-color: #000000 !important;
+        color: #f1f5f9 !important;
         font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .main .block-container {
+        background-color: #000000 !important;
+        max-width: 1300px;
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+    }
+
+    header[data-testid="stHeader"] {
+        background-color: rgba(0, 0, 0, 0.85) !important;
+        backdrop-filter: blur(12px) !important;
+    }
+
+    section[data-testid="stSidebar"] {
+        background-color: #050811 !important;
+        border-right: 1px solid #1e293b !important;
+    }
+    section[data-testid="stSidebar"] .block-container {
+        background-color: transparent !important;
     }
 
     /* Pulsing Live Dot Animation */
     @keyframes pulse-dot {
-        0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-        70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
-        100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); }
+        70% { transform: scale(1.15); box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); }
+        100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
     }
     .pulsing-live-dot {
         display: inline-block;
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background-color: #22c55e;
-        margin-right: 6px;
+        background-color: #10b981;
+        margin-right: 7px;
         animation: pulse-dot 2s infinite ease-in-out;
         vertical-align: middle;
     }
 
-    /* Top Hero Banner with Radial Mesh Gradient */
+    /* Top Hero Banner - Midnight Black with Cyan/Indigo Glow */
     .hero-container {
-        background: radial-gradient(circle at top right, #1e1b4b 0%, #0f172a 60%, #082f49 100%);
+        background: radial-gradient(circle at top right, #111827 0%, #060912 55%, #000000 100%);
         border-radius: 18px;
-        padding: 30px 36px;
+        padding: 32px 38px;
         color: #f8fafc;
         margin-bottom: 22px;
-        box-shadow: 0 20px 40px -15px rgba(2, 6, 23, 0.6);
-        border: 1px solid rgba(56, 189, 248, 0.25);
+        box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.95), 0 0 35px rgba(56, 189, 248, 0.12);
+        border: 1px solid rgba(56, 189, 248, 0.35);
         position: relative;
         overflow: hidden;
     }
@@ -86,7 +109,7 @@ st.markdown("""
         background: linear-gradient(90deg, #38bdf8, #818cf8, #34d399, #f59e0b);
     }
     .hero-title {
-        font-size: 2.25rem;
+        font-size: 2.3rem;
         font-weight: 800;
         letter-spacing: -0.025em;
         margin: 0 0 8px 0;
@@ -98,9 +121,9 @@ st.markdown("""
     .hero-subtitle {
         font-size: 1.05rem;
         color: #cbd5e1;
-        max-width: 950px;
-        line-height: 1.6;
-        margin-bottom: 18px;
+        max-width: 980px;
+        line-height: 1.65;
+        margin-bottom: 20px;
     }
     .hero-badges {
         display: flex;
@@ -109,8 +132,8 @@ st.markdown("""
         align-items: center;
     }
     .hero-badge {
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.12);
         border-radius: 20px;
         padding: 5px 14px;
         font-size: 0.8rem;
@@ -122,23 +145,23 @@ st.markdown("""
         backdrop-filter: blur(8px);
     }
     .hero-badge-highlight {
-        background: rgba(16, 185, 129, 0.16);
+        background: rgba(16, 185, 129, 0.15);
         border: 1px solid rgba(52, 211, 153, 0.4);
         color: #34d399;
     }
 
-    /* Navy System Health & Telemetry Dashboard */
+    /* Deep Black Telemetry Dashboard */
     .health-container {
-        background: #0f172a;
+        background: #080c16;
         border: 1px solid #1e293b;
         border-radius: 14px;
-        padding: 14px 22px;
+        padding: 16px 24px;
         margin-bottom: 24px;
         display: flex;
         flex-wrap: wrap;
         gap: 16px;
         justify-content: space-between;
-        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.25);
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.7);
     }
     .health-col {
         display: flex;
@@ -148,12 +171,12 @@ st.markdown("""
     .health-label {
         font-size: 0.72rem;
         text-transform: uppercase;
-        letter-spacing: 0.06em;
-        color: #94a3b8;
+        letter-spacing: 0.08em;
+        color: #64748b;
         font-weight: 700;
     }
     .health-val {
-        font-size: 0.94rem;
+        font-size: 0.95rem;
         font-weight: 700;
         color: #f8fafc;
         display: flex;
@@ -166,13 +189,13 @@ st.markdown("""
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: #0b1120;
+        background: #050811;
         border-radius: 14px;
-        padding: 16px 20px;
+        padding: 18px 22px;
         margin-top: 14px;
-        margin-bottom: 22px;
-        border: 1px solid rgba(56, 189, 248, 0.25);
-        box-shadow: 0 8px 24px rgba(2, 6, 23, 0.4);
+        margin-bottom: 24px;
+        border: 1px solid rgba(56, 189, 248, 0.3);
+        box-shadow: 0 10px 32px rgba(0, 0, 0, 0.85);
         overflow-x: auto;
         gap: 10px;
     }
@@ -184,108 +207,113 @@ st.markdown("""
         min-width: 125px;
     }
     .flow-icon {
-        width: 38px;
-        height: 38px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
-        background: #1e293b;
+        background: #0c1426;
         border: 2px solid #38bdf8;
         display: flex;
         align-items: center;
         justify-content: center;
         color: #38bdf8;
-        font-size: 1.1rem;
+        font-size: 1.15rem;
         margin-bottom: 6px;
-        box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
+        box-shadow: 0 0 16px rgba(56, 189, 248, 0.35);
     }
     .flow-title {
-        font-size: 0.78rem;
+        font-size: 0.8rem;
         font-weight: 700;
         color: #f8fafc;
     }
     .flow-sub {
-        font-size: 0.68rem;
+        font-size: 0.7rem;
         color: #94a3b8;
     }
     .flow-arrow {
         color: #38bdf8;
-        font-size: 1.2rem;
+        font-size: 1.25rem;
         font-weight: 800;
     }
 
     /* Verification Status Pills */
     .status-pill-verified {
-        background: #dcfce7;
-        color: #166534;
-        border: 1px solid #86efac;
+        background: rgba(34, 197, 94, 0.15);
+        color: #4ade80;
+        border: 1px solid rgba(34, 197, 94, 0.4);
         border-radius: 14px;
-        padding: 3px 10px;
+        padding: 3px 12px;
         font-size: 0.78rem;
         font-weight: 700;
         display: inline-flex;
         align-items: center;
-        gap: 4px;
+        gap: 5px;
     }
     .status-pill-meta {
-        background: #dbeafe;
-        color: #1e40af;
-        border: 1px solid #93c5fd;
+        background: rgba(56, 189, 248, 0.15);
+        color: #38bdf8;
+        border: 1px solid rgba(56, 189, 248, 0.4);
         border-radius: 14px;
-        padding: 3px 10px;
+        padding: 3px 12px;
         font-size: 0.78rem;
         font-weight: 700;
         display: inline-flex;
         align-items: center;
-        gap: 4px;
+        gap: 5px;
     }
 
     /* Civic Advisory Cards */
     .advisory-card {
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
+        background: #080d18;
+        border: 1px solid #1e293b;
         border-radius: 14px;
-        padding: 22px 26px;
-        margin-bottom: 18px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        padding: 24px 28px;
+        margin-bottom: 20px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+        transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
     }
     .advisory-card:hover {
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 12px 32px rgba(56, 189, 248, 0.15);
+        border-color: #38bdf8;
         transform: translateY(-2px);
     }
     .step-item {
-        background: #f8fafc;
-        border-left: 4px solid #3b82f6;
-        padding: 12px 16px;
+        background: #0b1325;
+        border-left: 4px solid #38bdf8;
+        border-top: 1px solid rgba(56, 189, 248, 0.12);
+        border-right: 1px solid rgba(56, 189, 248, 0.12);
+        border-bottom: 1px solid rgba(56, 189, 248, 0.12);
+        padding: 13px 18px;
         margin-bottom: 10px;
         border-radius: 0 10px 10px 0;
         font-size: 0.95rem;
-        color: #1e293b;
-        line-height: 1.5;
+        color: #f1f5f9;
+        line-height: 1.6;
     }
     .statute-tag {
-        background: #eff6ff;
-        color: #1d4ed8;
-        border: 1px solid #bfdbfe;
-        border-radius: 8px;
-        padding: 10px 14px;
+        background: #081122;
+        color: #38bdf8;
+        border: 1px solid rgba(56, 189, 248, 0.25);
+        border-radius: 10px;
+        padding: 12px 16px;
         font-size: 0.88rem;
         margin-bottom: 10px;
     }
     .channel-card {
-        background: #f8fafc;
-        border: 1px solid #cbd5e1;
+        background: #080d18;
+        border: 1px solid #1e293b;
         border-radius: 10px;
         padding: 14px 18px;
         margin-bottom: 12px;
+        color: #e2e8f0;
     }
 
     /* Legal Answer Card */
     .answer-card {
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
+        background: #080d18;
+        border: 1px solid #1e293b;
         border-radius: 16px;
-        padding: 26px;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+        padding: 28px;
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.85);
         margin-top: 16px;
         margin-bottom: 22px;
     }
@@ -293,80 +321,86 @@ st.markdown("""
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid #f1f5f9;
+        border-bottom: 1px solid #1e293b;
         padding-bottom: 14px;
         margin-bottom: 18px;
     }
     .answer-title {
-        font-size: 1.3rem;
+        font-size: 1.35rem;
         font-weight: 800;
-        color: #0f172a;
+        color: #38bdf8;
         display: flex;
         align-items: center;
         gap: 8px;
     }
     .answer-body {
         font-family: 'Newsreader', Georgia, serif;
-        font-size: 1.14rem;
-        line-height: 1.75;
-        color: #1e293b;
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: #f1f5f9;
     }
 
     /* Citation Tags & Cards */
     .citation-tag {
-        background: #eff6ff;
-        color: #1d4ed8;
-        border: 1px solid #bfdbfe;
+        background: rgba(56, 189, 248, 0.18);
+        color: #38bdf8;
+        border: 1px solid rgba(56, 189, 248, 0.4);
         font-weight: 700;
-        padding: 1px 7px;
-        border-radius: 5px;
+        padding: 2px 8px;
+        border-radius: 6px;
         font-size: 0.88rem;
     }
     .citation-card {
-        background: #f8fafc;
-        border: 1px solid #e2e8f0;
-        border-left: 4px solid #2563eb;
+        background: #080d18;
+        border: 1px solid #1e293b;
+        border-left: 4px solid #38bdf8;
         border-radius: 12px;
-        padding: 18px;
+        padding: 20px;
         margin-bottom: 16px;
-        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+        transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
     }
     .citation-card:hover {
-        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.1);
+        box-shadow: 0 10px 28px rgba(56, 189, 248, 0.2);
+        border-color: #38bdf8;
         transform: translateY(-2px);
     }
     .citation-source-title {
         font-weight: 800;
-        font-size: 1.05rem;
-        color: #0f172a;
+        font-size: 1.1rem;
+        color: #f8fafc;
     }
     .citation-meta-pill {
         display: inline-block;
-        background: #e2e8f0;
-        color: #334155;
+        background: #0f172a;
+        color: #94a3b8;
+        border: 1px solid #1e293b;
         border-radius: 6px;
-        padding: 3px 9px;
+        padding: 3px 10px;
         font-size: 0.78rem;
         font-weight: 600;
         margin-right: 6px;
     }
     .quote-box {
-        background: #f0fdf4;
-        border-left: 4px solid #16a34a;
-        padding: 12px 16px;
+        background: rgba(16, 185, 129, 0.08);
+        border-left: 4px solid #10b981;
+        border-top: 1px solid rgba(16, 185, 129, 0.15);
+        border-right: 1px solid rgba(16, 185, 129, 0.15);
+        border-bottom: 1px solid rgba(16, 185, 129, 0.15);
+        padding: 13px 18px;
         border-radius: 0 10px 10px 0;
         font-family: 'Newsreader', Georgia, serif;
-        font-size: 0.98rem;
-        color: #14532d;
-        line-height: 1.6;
+        font-size: 1.02rem;
+        color: #a7f3d0;
+        line-height: 1.65;
         margin-top: 12px;
     }
 
     /* Badges */
     .status-badge-grounded {
-        background: #ecfdf5;
-        color: #047857;
-        border: 1px solid #6ee7b7;
+        background: rgba(16, 185, 129, 0.15);
+        color: #34d399;
+        border: 1px solid rgba(52, 211, 153, 0.4);
         padding: 4px 14px;
         border-radius: 9999px;
         font-size: 0.84rem;
@@ -376,9 +410,9 @@ st.markdown("""
         gap: 6px;
     }
     .status-badge-warning {
-        background: #fffbeb;
-        color: #b45309;
-        border: 1px solid #fcd34d;
+        background: rgba(245, 158, 11, 0.15);
+        color: #fbbf24;
+        border: 1px solid rgba(245, 158, 11, 0.4);
         padding: 4px 14px;
         border-radius: 9999px;
         font-size: 0.84rem;
@@ -386,6 +420,26 @@ st.markdown("""
         display: inline-flex;
         align-items: center;
         gap: 6px;
+    }
+
+    /* Tabs Styling */
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 6px;
+        background-color: #050811;
+        padding: 6px;
+        border-radius: 12px;
+        border: 1px solid #1e293b;
+    }
+    .stTabs [data-baseweb="tab"] {
+        color: #94a3b8;
+        border-radius: 8px;
+        padding: 8px 18px;
+        font-weight: 600;
+    }
+    .stTabs [aria-selected="true"] {
+        background-color: #0b1326 !important;
+        color: #38bdf8 !important;
+        border: 1px solid rgba(56, 189, 248, 0.35) !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -673,9 +727,9 @@ with tab_rights:
         # 2. Immediate Danger Alert Banner
         danger = advice["2_immediate_danger"]
         is_emerg = danger.get("is_emergency", False)
-        danger_bg = "#fef2f2" if is_emerg else "#f0fdf4"
-        danger_border = "#f87171" if is_emerg else "#86efac"
-        danger_color = "#991b1b" if is_emerg else "#166534"
+        danger_bg = "rgba(239, 68, 68, 0.12)" if is_emerg else "rgba(16, 185, 129, 0.12)"
+        danger_border = "rgba(239, 68, 68, 0.35)" if is_emerg else "rgba(16, 185, 129, 0.35)"
+        danger_color = "#f87171" if is_emerg else "#4ade80"
         danger_icon = "🚨 Emergency Alert" if is_emerg else "ℹ️ Situation Assessment"
 
         st.markdown(f"""
@@ -683,7 +737,7 @@ with tab_rights:
             <div style="font-weight: 800; color: {danger_color}; font-size: 1.05rem;">
                 {danger_icon}
             </div>
-            <div style="color: #1e293b; margin-top: 6px; font-size: 0.95rem;">
+            <div style="color: #e2e8f0; margin-top: 6px; font-size: 0.95rem;">
                 {danger.get('banner_text', '')}
             </div>
         </div>
@@ -708,9 +762,9 @@ with tab_rights:
             for stat in lp.get("statutes", []):
                 st.markdown(f"""
                 <div class="statute-tag">
-                    <strong style="color: #1e40af;">{stat.get('act', '')}</strong> — <code style="font-weight: 700;">{stat.get('section', '')}</code><br>
-                    <span style="color: #1e293b; font-weight: 600;">{stat.get('deals_with', '')}</span><br>
-                    <span style="color: #475569; font-size: 0.85rem;"><em>Application:</em> {stat.get('relevance', '')}</span>
+                    <strong style="color: #38bdf8;">{stat.get('act', '')}</strong> — <code style="font-weight: 700;">{stat.get('section', '')}</code><br>
+                    <span style="color: #f1f5f9; font-weight: 600;">{stat.get('deals_with', '')}</span><br>
+                    <span style="color: #94a3b8; font-size: 0.85rem;"><em>Application:</em> {stat.get('relevance', '')}</span>
                 </div>
                 """, unsafe_allow_html=True)
 
@@ -719,8 +773,8 @@ with tab_rights:
             for rep in advice.get("7_where_to_report", []):
                 st.markdown(f"""
                 <div class="channel-card">
-                    <strong style="color: #1e40af;">📍 {rep.get('authority', '')}</strong> &nbsp;|&nbsp; <code>{rep.get('contact', '')}</code><br>
-                    <span style="color: #475569; font-size: 0.9rem;">{rep.get('details', '')}</span>
+                    <strong style="color: #38bdf8;">📍 {rep.get('authority', '')}</strong> &nbsp;|&nbsp; <code>{rep.get('contact', '')}</code><br>
+                    <span style="color: #94a3b8; font-size: 0.9rem;">{rep.get('details', '')}</span>
                 </div>
                 """, unsafe_allow_html=True)
 
@@ -729,7 +783,7 @@ with tab_rights:
             st.markdown("#### 🔑 Your Key Statutory Rights")
             for r_txt in advice.get("3_possible_rights", []):
                 st.markdown(f"""
-                <div style="background: #f0fdf4; border-left: 3px solid #16a34a; border-radius: 0 6px 6px 0; padding: 10px 14px; margin-bottom: 8px; font-size: 0.9rem; color: #166534;">
+                <div style="background: rgba(16, 185, 129, 0.08); border-left: 3px solid #10b981; border-top: 1px solid rgba(16, 185, 129, 0.15); border-right: 1px solid rgba(16, 185, 129, 0.15); border-bottom: 1px solid rgba(16, 185, 129, 0.15); border-radius: 0 8px 8px 0; padding: 10px 14px; margin-bottom: 8px; font-size: 0.9rem; color: #a7f3d0;">
                     ⚖️ {r_txt}
                 </div>
                 """, unsafe_allow_html=True)
@@ -812,13 +866,13 @@ with tab_quiz:
         }.get(scenario["difficulty"], "#3b82f6")
 
         st.markdown(f"""
-        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 6px solid {diff_color}; border-radius: 12px; padding: 22px; margin-top: 14px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+        <div style="background: #080d18; border: 1px solid #1e293b; border-left: 6px solid {diff_color}; border-radius: 12px; padding: 22px; margin-top: 14px; margin-bottom: 20px; box-shadow: 0 6px 20px rgba(0,0,0,0.6);">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 1.25rem; font-weight: 800; color: #0f172a;">📖 Case Study: {scenario['title']}</span>
+                <span style="font-size: 1.25rem; font-weight: 800; color: #f8fafc;">📖 Case Study: {scenario['title']}</span>
                 <span style="background: {diff_color}; color: white; border-radius: 12px; padding: 4px 12px; font-size: 0.75rem; font-weight: 700;">{scenario['difficulty']}</span>
             </div>
-            <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 12px;">Category: <strong>{scenario['category']}</strong> | 5 Interactive Questions</div>
-            <div style="font-family: 'Newsreader', Georgia, serif; font-size: 1.1rem; line-height: 1.7; color: #1e293b; background: #ffffff; padding: 18px; border-radius: 8px; border: 1px solid #e2e8f0;">
+            <div style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 12px;">Category: <strong>{scenario['category']}</strong> | 5 Interactive Questions</div>
+            <div style="font-family: 'Newsreader', Georgia, serif; font-size: 1.1rem; line-height: 1.75; color: #e2e8f0; background: #050811; padding: 18px; border-radius: 8px; border: 1px solid #1e293b;">
                 {scenario['story']}
             </div>
         </div>
@@ -859,9 +913,9 @@ with tab_quiz:
                 sc_col1.metric("Your Score", f"{eval_res['correct_count']} / {eval_res['total_questions']}")
                 sc_col2.metric("Accuracy", f"{eval_res['percentage']}%")
                 sc_col3.markdown(f"""
-                <div style="padding: 10px 16px; background: #f8fafc; border-radius: 8px; border: 1px solid #cbd5e1;">
-                    <div style="font-size: 1.1rem; font-weight: 800; color: #1e3a8a;">{eval_res['tier']}</div>
-                    <div style="font-size: 0.85rem; color: #475569;">{eval_res['feedback']}</div>
+                <div style="padding: 10px 16px; background: #080d18; border-radius: 8px; border: 1px solid #1e293b;">
+                    <div style="font-size: 1.1rem; font-weight: 800; color: #38bdf8;">{eval_res['tier']}</div>
+                    <div style="font-size: 0.85rem; color: #94a3b8;">{eval_res['feedback']}</div>
                 </div>
                 """, unsafe_allow_html=True)
 
@@ -871,17 +925,17 @@ with tab_quiz:
                 for item in eval_res["question_evaluations"]:
                     is_c = item["is_correct"]
                     icon = "✅" if is_c else "❌"
-                    card_border = "#86efac" if is_c else "#fca5a5"
-                    card_bg = "#f0fdf4" if is_c else "#fef2f2"
+                    card_border = "rgba(34, 197, 94, 0.4)" if is_c else "rgba(239, 68, 68, 0.4)"
+                    card_bg = "rgba(34, 197, 94, 0.08)" if is_c else "rgba(239, 68, 68, 0.08)"
 
                     st.markdown(f"""
                     <div style="background: {card_bg}; border: 1px solid {card_border}; border-radius: 10px; padding: 14px 18px; margin-bottom: 12px;">
                         <strong>{icon} Question {item['question_index']}: {item['question_text']}</strong><br>
                         <div style="margin-top: 6px; font-size: 0.92rem;">
                             Your Answer: <em>{item['user_answer_text']}</em><br>
-                            {"<span style='color: #166534; font-weight: 700;'>Correct!</span>" if is_c else f"<span style='color: #991b1b; font-weight: 700;'>Correct Answer: {item['correct_answer_text']}</span>"}
+                            {"<span style='color: #4ade80; font-weight: 700;'>Correct!</span>" if is_c else f"<span style='color: #f87171; font-weight: 700;'>Correct Answer: {item['correct_answer_text']}</span>"}
                         </div>
-                        <div style="margin-top: 8px; font-size: 0.88rem; color: #334155; background: rgba(255,255,255,0.7); padding: 8px 12px; border-radius: 6px;">
+                        <div style="margin-top: 8px; font-size: 0.88rem; color: #cbd5e1; background: #050811; padding: 8px 12px; border-radius: 6px; border: 1px solid #1e293b;">
                             💡 <strong>Legal Explanation & Precedent:</strong> {item['explanation']}
                         </div>
                     </div>
@@ -1106,9 +1160,9 @@ with tab_qa:
                             <span class="citation-meta-pill">🏛️ {cit.court or 'Supreme Court of India'}</span>
                             <span class="citation-meta-pill">📍 {cit.section}</span>
                             {f'<span class="citation-meta-pill">📅 Year: {cit.year}</span>' if cit.year else ''}
-                            <span class="citation-meta-pill" style="background: #dbeafe; color: #1e40af;">Relevance: {match_pct}%</span>
+                            <span class="citation-meta-pill" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3);">Relevance: {match_pct}%</span>
                         </div>
-                        <div class="quote-box" style="margin-top: 8px; border-left: 4px solid #16a34a; background: #f0fdf4;">
+                        <div class="quote-box" style="margin-top: 8px;">
                             <strong>Verbatim Holding / Quote:</strong><br>
                             "{cit.verbatim_quote or cit.snippet}"
                         </div>
@@ -1138,9 +1192,9 @@ with tab_qa:
                 for c in concordances:
                     st.markdown(f"""
                     <div class="channel-card">
-                        <strong style="color: #1e40af;">📌 {c['title']}</strong><br>
+                        <strong style="color: #38bdf8;">📌 {c['title']}</strong><br>
                         • <strong>Prior Law</strong>: {c['old_sec']} ({c['old_act']})<br>
-                        • <strong>Current Law (Post July 1, 2024)</strong>: <span style="color: #166534; font-weight: 700;">{c['new_sec']} of {c['new_act']}</span><br>
+                        • <strong>Current Law (Post July 1, 2024)</strong>: <span style="color: #4ade80; font-weight: 700;">{c['new_sec']} of {c['new_act']}</span><br>
                         • <em>Key Note:</em> {c['note']}
                     </div>
                     """, unsafe_allow_html=True)
@@ -1203,10 +1257,10 @@ with tab_docs:
             with col_card:
                 type_badge = "🏛️ Landmark Judgment" if d.doc_type == "judgment" else "📜 Statutory Act"
                 st.markdown(f"""
-                <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px 20px; margin-bottom: 14px; border-left: 4px solid #1e3a8a; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
-                    <span style="background: #e2e8f0; color: #1e3a8a; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px;">{type_badge}</span>
-                    <div style="font-weight: 700; color: #0f172a; font-size: 1.05rem; margin-top: 6px;">{d.title}</div>
-                    <div style="color: #64748b; font-size: 0.85rem; margin-top: 4px;">
+                <div style="background: #080d18; border: 1px solid #1e293b; border-radius: 12px; padding: 16px 20px; margin-bottom: 14px; border-left: 4px solid #38bdf8; box-shadow: 0 4px 14px rgba(0,0,0,0.6);">
+                    <span style="background: #0f172a; color: #38bdf8; border: 1px solid #1e293b; font-size: 0.75rem; font-weight: 700; padding: 3px 9px; border-radius: 4px;">{type_badge}</span>
+                    <div style="font-weight: 700; color: #f8fafc; font-size: 1.05rem; margin-top: 6px;">{d.title}</div>
+                    <div style="color: #94a3b8; font-size: 0.85rem; margin-top: 4px;">
                         🏛️ <strong>Authority</strong>: {d.court_authority or "Supreme Court of India"} &nbsp;|&nbsp;
                         📜 <strong>Citation</strong>: {d.citation_ref or "Official Gazetted Act"} &nbsp;|&nbsp;
                         📅 <strong>Date</strong>: {d.date or "N/A"} &nbsp;|&nbsp;

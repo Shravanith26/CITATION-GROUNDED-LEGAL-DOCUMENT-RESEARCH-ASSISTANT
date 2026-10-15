@@ -1,4 +1,5 @@
 {
-  "mean_precision_at_5": 0.44799999999999995,
-  "mean_recall_at_5": 0.88
+  "mean_precision_at_5": 0.472,
+  "mean_recall_at_5": 0.84,
+  "mean_reciprocal_rank": 0.6957
 }

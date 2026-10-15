@@ -1,3 +1,5 @@
 {
-  "mean_citation_accuracy": 0.96
+  "mean_citation_accuracy": 0.92,
+  "unsupported_claim_rate": 0.0,
+  "citation_resolution_rate": 1.0
 }

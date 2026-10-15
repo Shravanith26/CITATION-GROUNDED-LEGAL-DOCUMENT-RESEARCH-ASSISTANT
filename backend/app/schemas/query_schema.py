@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 from typing import Optional
 from datetime import datetime
 
@@ -8,12 +8,11 @@ class QueryRequest(BaseModel):
     top_k: Optional[int] = Field(default=5, ge=1, le=20, description="Number of chunks to retrieve")
 
 class QueryLogResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: str
     user_session_id: Optional[str]
     query_text: str
     timestamp: datetime
     latency_ms: Optional[float]
     retrieved_count: int
-
-    class Config:
-        from_attributes = True

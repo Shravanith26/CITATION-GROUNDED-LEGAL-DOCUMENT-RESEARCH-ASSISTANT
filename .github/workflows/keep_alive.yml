@@ -1,0 +1,18 @@
+name: 24/7 Cloud App Keep-Alive
+
+on:
+  schedule:
+    # Run every 6 hours to ensure Streamlit Cloud never sleeps/hibernates
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  ping-app:
+    name: Ping Streamlit Cloud App
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Heartbeat to Keep App Awake 24/7
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://shravanith26-citation-grounded-legal-docum-streamlit-app-zyuvex.streamlit.app/)
+          echo "Streamlit Heartbeat Response: $STATUS"
+          echo "Keep-alive ping successful. App will remain awake 24/7."

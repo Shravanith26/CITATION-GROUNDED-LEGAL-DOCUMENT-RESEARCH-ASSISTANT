@@ -39,16 +39,17 @@ class CitationMapper:
         return "Supreme Court of India", None
 
     def _find_claim_for_marker(self, answer_text: str, marker_idx: int) -> str:
-        """Finds the sentence or bullet point containing [marker_idx]."""
+        """Finds the sentence or bullet point containing [marker_idx] (handles [1], [1, 2], etc.)."""
+        pattern = re.compile(rf'\[[^\]]*\b{marker_idx}\b[^\]]*\]')
         lines = answer_text.split("\n")
         for line in lines:
-            if f"[{marker_idx}]" in line:
+            if pattern.search(line):
                 return line.strip()
 
         # Fallback to sentence search
         sentences = re.split(r'(?<=[.!?])\s+', answer_text)
         for s in sentences:
-            if f"[{marker_idx}]" in s:
+            if pattern.search(s):
                 return s.strip()
         return ""
 
@@ -67,7 +68,7 @@ class CitationMapper:
                 return True, q.strip(), "Source found & Passage verified"
 
         # Check substantive token overlap
-        claim_clean = re.sub(r'\[[0-9]+\]', '', claim_text)
+        claim_clean = re.sub(r'\[[0-9]+(?:\s*,\s*[0-9]+)*\]', '', claim_text)
         claim_tokens = set(re.findall(r'\b[a-zA-Z0-9_]{4,}\b', claim_clean.lower()))
         chunk_tokens = set(re.findall(r'\b[a-zA-Z0-9_]{4,}\b', chunk_text.lower()))
 

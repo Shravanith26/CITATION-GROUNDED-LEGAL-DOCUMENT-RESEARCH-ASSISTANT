@@ -100,6 +100,20 @@ class LLMService:
         if max_sim < 0.10:
             return "Information not found in the provided legal context. Insufficient authoritative evidence in the indexed legal corpus to answer this query."
 
+        # Check substantive topical overlap between query and retrieved chunks
+        generic_terms = {
+            "what", "which", "how", "can", "when", "where", "why", "who", "does", "is", "are", "the",
+            "a", "an", "and", "or", "in", "to", "for", "of", "with", "from", "by", "on", "at",
+            "law", "laws", "rule", "rules", "legal", "provision", "provisions", "section", "act",
+            "case", "cases", "court", "order", "system", "under", "about", "regarding", "should", "would", "could"
+        }
+        substantive_q_tokens = set(re.findall(r'\b[a-zA-Z0-9_]{3,}\b', query.lower())) - generic_terms
+        if substantive_q_tokens:
+            all_chunks_text = " ".join(f"{c.text} {c.document_title} {c.section_ref}" for c in chunks).lower()
+            chunk_tokens = set(re.findall(r'\b[a-zA-Z0-9_]{3,}\b', all_chunks_text))
+            if not substantive_q_tokens.intersection(chunk_tokens):
+                return "Information not found in the provided legal context. Insufficient authoritative evidence in the indexed legal corpus to answer this query. To prevent legal hallucinations, LexisGrounded abstains from answering out-of-corpus matters."
+
         synthesized_points = []
         for idx, chunk in enumerate(chunks[:4], start=1):
             doc_title = chunk.document_title or "Legal Precedent"

@@ -1,12 +1,12 @@
 # ‚öñÔ∏è Citation-Grounded Legal Document Research Assistant
 
-> ### üåê **Permanent Cloud Web Application (24/7 Online)**: [shravanith26-citation-grounded-legal-docum-streamlit-app-zyuvex.streamlit.app](https://shravanith26-citation-grounded-legal-docum-streamlit-app-zyuvex.streamlit.app/)
-> **Live Demo Mirror**: [range-commitment-new-kentucky.trycloudflare.com](https://range-commitment-new-kentucky.trycloudflare.com)
+> ### üåê **Live Web Application (Active & Working Now)**: [shravanith26-citation-grounded-legal-docum-streamlit-app-zyuvex.streamlit.app](https://shravanith26-citation-grounded-legal-docum-streamlit-app-zyuvex.streamlit.app)
+> **Click the link above to test the system live in your browser ‚Äî zero login or sign-in required!**
 >
-> üöÄ **Official 24/7 Cloud Deployment**: Zero configuration required!  
-> [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://shravanith26-citation-grounded-legal-docum-streamlit-app-zyuvex.streamlit.app/)
+> üöÄ **1-Click Permanent Cloud Deployment**: Click the badge below to deploy 24/7 on Streamlit Cloud with zero configuration:  
+> [![Deploy to Streamlit Cloud](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/deploy?repository=Shravanith26/CITATION-GROUNDED-LEGAL-DOCUMENT-RESEARCH-ASSISTANT&branch=main&mainModule=streamlit_app.py)
 
-[![Live App](https://img.shields.io/badge/Live%20App-Online%2024%2F7-success?style=for-the-badge&logo=streamlit&logoColor=white)](https://shravanith26-citation-grounded-legal-docum-streamlit-app-zyuvex.streamlit.app/)
+[![Live App](https://img.shields.io/badge/Live%20App-Online%20Now-success?style=for-the-badge&logo=cloudflare&logoColor=white)](https://shravanith26-citation-grounded-legal-docum-streamlit-app-zyuvex.streamlit.app)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Shravanith26/CITATION-GROUNDED-LEGAL-DOCUMENT-RESEARCH-ASSISTANT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

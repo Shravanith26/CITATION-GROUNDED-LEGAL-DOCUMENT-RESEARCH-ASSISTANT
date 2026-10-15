@@ -13,6 +13,6 @@ jobs:
     steps:
       - name: Send Heartbeat to Keep App Awake 24/7
         run: |
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://shravanith26-citation-grounded-legal-docum-streamlit-app-zyuvex.streamlit.app/)
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://citation-grounded-legal-document-research-assistant-wdna82g9vv.streamlit.app/)
           echo "Streamlit Heartbeat Response: $STATUS"
           echo "Keep-alive ping successful. App will remain awake 24/7."

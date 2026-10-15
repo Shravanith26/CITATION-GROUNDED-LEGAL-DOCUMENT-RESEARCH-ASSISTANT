@@ -1,14 +1,12 @@
 # Citation-Grounded Legal Document Research Assistant
 
-> ### **Live Web Application (Active & Working Now)**: [shravanith26-citation-grounded-legal-docum-streamlit-app-zyuvex.streamlit.app](https://shravanith26-citation-grounded-legal-docum-streamlit-app-zyuvex.streamlit.app)
+> ### **Live Web Application (Active & Working Now)**: [citation-grounded-legal-document-research-assistant-wdna82g9vv.streamlit.app](https://citation-grounded-legal-document-research-assistant-wdna82g9vv.streamlit.app/)
 > **Click the link above to test the system live in your browser - zero login or sign-in required!**
->
-> **High-Speed Public Live Mirror**: [warehouse-threats-growth-guidance.trycloudflare.com](https://warehouse-threats-growth-guidance.trycloudflare.com)
 >
 > **1-Click Permanent Cloud Deployment**: Click the badge below to deploy 24/7 on Streamlit Cloud with zero configuration:  
 > [![Deploy to Streamlit Cloud](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/deploy?repository=Shravanith26/CITATION-GROUNDED-LEGAL-DOCUMENT-RESEARCH-ASSISTANT&branch=main&mainModule=streamlit_app.py)
 
-[![Live App](https://img.shields.io/badge/Live%20App-Online%20Now-success?style=for-the-badge&logo=cloudflare&logoColor=white)](https://shravanith26-citation-grounded-legal-docum-streamlit-app-zyuvex.streamlit.app)
+[![Live App](https://img.shields.io/badge/Live%20App-Online%20Now-success?style=for-the-badge&logo=streamlit&logoColor=white)](https://citation-grounded-legal-document-research-assistant-wdna82g9vv.streamlit.app/)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Shravanith26/CITATION-GROUNDED-LEGAL-DOCUMENT-RESEARCH-ASSISTANT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

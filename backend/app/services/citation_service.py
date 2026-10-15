@@ -32,17 +32,24 @@ class CitationService:
         )
 
         if db and answer_id and citations:
-            for cit in citations:
-                cit_record = CitationModel(
-                    answer_id=answer_id,
-                    chunk_id=cit.chunk_id,
-                    document_title=cit.document,
-                    section_ref=cit.section,
-                    snippet=cit.snippet,
-                    confidence_score=cit.confidence_score or 1.0,
-                    marker_index=cit.marker_index or 1
-                )
-                db.add(cit_record)
-            db.commit()
+            try:
+                for cit in citations:
+                    cit_record = CitationModel(
+                        answer_id=answer_id,
+                        chunk_id=cit.chunk_id,
+                        document_title=cit.document,
+                        section_ref=cit.section,
+                        snippet=cit.snippet,
+                        confidence_score=cit.confidence_score or 1.0,
+                        marker_index=cit.marker_index or 1
+                    )
+                    db.add(cit_record)
+                db.commit()
+            except Exception as db_err:
+                try:
+                    db.rollback()
+                except Exception:
+                    pass
+                query_logger.warning(f"Failed to persist citations to DB: {db_err}")
 
         return citations, confidence

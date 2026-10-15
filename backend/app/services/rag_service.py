@@ -51,25 +51,32 @@ class RAGService:
             # Persist query log if db is available
             query_id = None
             if db:
-                query_log = QueryLogModel(
-                    user_session_id=session_id,
-                    query_text=query_text,
-                    latency_ms=latency_ms,
-                    retrieved_count=0
-                )
-                db.add(query_log)
-                db.commit()
-                db.refresh(query_log)
-                query_id = query_log.id
+                try:
+                    query_log = QueryLogModel(
+                        user_session_id=session_id,
+                        query_text=query_text,
+                        latency_ms=latency_ms,
+                        retrieved_count=0
+                    )
+                    db.add(query_log)
+                    db.commit()
+                    db.refresh(query_log)
+                    query_id = query_log.id
 
-                ans_model = AnswerModel(
-                    query_id=query_id,
-                    answer_text=answer_text,
-                    model_used="none",
-                    confidence="insufficient_evidence"
-                )
-                db.add(ans_model)
-                db.commit()
+                    ans_model = AnswerModel(
+                        query_id=query_id,
+                        answer_text=answer_text,
+                        model_used="none",
+                        confidence="insufficient_evidence"
+                    )
+                    db.add(ans_model)
+                    db.commit()
+                except Exception as db_err:
+                    try:
+                        db.rollback()
+                    except Exception:
+                        pass
+                    query_logger.warning(f"Database logging skipped for insufficient evidence query: {db_err}")
 
             return AnswerResponse(
                 answer=answer_text,
@@ -96,28 +103,36 @@ class RAGService:
         # 6. Database Logging
         query_id = None
         answer_id = None
+        ans_record = None
         if db:
-            query_log = QueryLogModel(
-                user_session_id=session_id,
-                query_text=query_text,
-                latency_ms=latency_ms,
-                retrieved_count=len(chunks)
-            )
-            db.add(query_log)
-            db.commit()
-            db.refresh(query_log)
-            query_id = query_log.id
+            try:
+                query_log = QueryLogModel(
+                    user_session_id=session_id,
+                    query_text=query_text,
+                    latency_ms=latency_ms,
+                    retrieved_count=len(chunks)
+                )
+                db.add(query_log)
+                db.commit()
+                db.refresh(query_log)
+                query_id = query_log.id
 
-            ans_record = AnswerModel(
-                query_id=query_id,
-                answer_text=raw_answer,
-                model_used=model_used,
-                confidence="grounded"
-            )
-            db.add(ans_record)
-            db.commit()
-            db.refresh(ans_record)
-            answer_id = ans_record.id
+                ans_record = AnswerModel(
+                    query_id=query_id,
+                    answer_text=raw_answer,
+                    model_used=model_used,
+                    confidence="grounded"
+                )
+                db.add(ans_record)
+                db.commit()
+                db.refresh(ans_record)
+                answer_id = ans_record.id
+            except Exception as db_err:
+                try:
+                    db.rollback()
+                except Exception:
+                    pass
+                query_logger.warning(f"Database logging skipped during research query: {db_err}")
 
         # 7. Extract & verify citations
         citations, confidence = self.citation_service.process_citations(
@@ -128,9 +143,16 @@ class RAGService:
         )
 
         # Update answer confidence if verified
-        if db and answer_id:
-            ans_record.confidence = confidence
-            db.commit()
+        if db and answer_id and ans_record:
+            try:
+                ans_record.confidence = confidence
+                db.commit()
+            except Exception as db_err:
+                try:
+                    db.rollback()
+                except Exception:
+                    pass
+                query_logger.warning(f"Database confidence update skipped: {db_err}")
 
         return AnswerResponse(
             answer=raw_answer,

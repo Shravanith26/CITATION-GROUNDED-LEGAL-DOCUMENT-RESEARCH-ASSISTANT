@@ -1,4 +1,4 @@
-# ‚Citation-Grounded Legal Document Research Assistant
+# Citation-Grounded Legal Document Research Assistant
 
 > ### **Live Web Application (Active & Working Now)**: [shravanith26-citation-grounded-legal-docum-streamlit-app-zyuvex.streamlit.app](https://shravanith26-citation-grounded-legal-docum-streamlit-app-zyuvex.streamlit.app)
 > **Click the link above to test the system live in your browser ‚Äî zero login or sign-in required!**

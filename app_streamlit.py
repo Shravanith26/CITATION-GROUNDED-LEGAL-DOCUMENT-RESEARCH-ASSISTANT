@@ -922,21 +922,27 @@ with tab_quiz:
                 st.divider()
                 st.markdown("#### 📑 Question-by-Question Detailed Review")
 
-                for item in eval_res["question_evaluations"]:
-                    is_c = item["is_correct"]
+                for item in eval_res.get("question_evaluations", []):
+                    is_c = item.get("is_correct", False)
                     icon = "✅" if is_c else "❌"
                     card_border = "rgba(34, 197, 94, 0.4)" if is_c else "rgba(239, 68, 68, 0.4)"
                     card_bg = "rgba(34, 197, 94, 0.08)" if is_c else "rgba(239, 68, 68, 0.08)"
 
+                    q_num = item.get("question_index", 0) + 1
+                    q_text = item.get("question_text") or item.get("question", "")
+                    user_ans = item.get("user_answer_text") or item.get("user_choice_text", "Not Answered")
+                    correct_ans = item.get("correct_answer_text") or item.get("correct_choice_text", "")
+                    explanation = item.get("explanation", "")
+
                     st.markdown(f"""
                     <div style="background: {card_bg}; border: 1px solid {card_border}; border-radius: 10px; padding: 14px 18px; margin-bottom: 12px;">
-                        <strong>{icon} Question {item['question_index']}: {item['question_text']}</strong><br>
+                        <strong>{icon} Question {q_num}: {q_text}</strong><br>
                         <div style="margin-top: 6px; font-size: 0.92rem;">
-                            Your Answer: <em>{item['user_answer_text']}</em><br>
-                            {"<span style='color: #4ade80; font-weight: 700;'>Correct!</span>" if is_c else f"<span style='color: #f87171; font-weight: 700;'>Correct Answer: {item['correct_answer_text']}</span>"}
+                            Your Answer: <em>{user_ans}</em><br>
+                            {"<span style='color: #4ade80; font-weight: 700;'>Correct!</span>" if is_c else f"<span style='color: #f87171; font-weight: 700;'>Correct Answer: {correct_ans}</span>"}
                         </div>
                         <div style="margin-top: 8px; font-size: 0.88rem; color: #cbd5e1; background: #050811; padding: 8px 12px; border-radius: 6px; border: 1px solid #1e293b;">
-                            💡 <strong>Legal Explanation & Precedent:</strong> {item['explanation']}
+                            💡 <strong>Legal Explanation & Precedent:</strong> {explanation}
                         </div>
                     </div>
                     """, unsafe_allow_html=True)

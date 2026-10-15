@@ -80,14 +80,20 @@ class QuizEngine:
             if is_correct:
                 correct_count += 1
 
+            user_choice_text = q["options"][user_choice] if user_choice is not None and 0 <= user_choice < len(q["options"]) else "Not Answered"
+            correct_choice_text = q["options"][correct_choice]
+
             details.append({
                 "question_index": idx,
                 "question": q["question"],
+                "question_text": q["question"],
                 "options": q["options"],
                 "user_choice": user_choice,
-                "user_choice_text": q["options"][user_choice] if user_choice is not None and 0 <= user_choice < len(q["options"]) else "Not Answered",
+                "user_choice_text": user_choice_text,
+                "user_answer_text": user_choice_text,
                 "correct_choice": correct_choice,
-                "correct_choice_text": q["options"][correct_choice],
+                "correct_choice_text": correct_choice_text,
+                "correct_answer_text": correct_choice_text,
                 "is_correct": is_correct,
                 "explanation": q["explanation"]
             })

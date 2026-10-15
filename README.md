@@ -3,6 +3,8 @@
 > ### 🌐 **Live Web Application (Active & Working Now)**: [shravanith26-citation-grounded-legal-docum-streamlit-app-zyuvex.streamlit.app](https://shravanith26-citation-grounded-legal-docum-streamlit-app-zyuvex.streamlit.app)
 > **Click the link above to test the system live in your browser — zero login or sign-in required!**
 >
+> ⚡ **High-Speed Public Live Mirror**: [warehouse-threats-growth-guidance.trycloudflare.com](https://warehouse-threats-growth-guidance.trycloudflare.com)
+>
 > 🚀 **1-Click Permanent Cloud Deployment**: Click the badge below to deploy 24/7 on Streamlit Cloud with zero configuration:  
 > [![Deploy to Streamlit Cloud](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/deploy?repository=Shravanith26/CITATION-GROUNDED-LEGAL-DOCUMENT-RESEARCH-ASSISTANT&branch=main&mainModule=streamlit_app.py)
 

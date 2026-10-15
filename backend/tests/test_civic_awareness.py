@@ -4,14 +4,24 @@ Tests Situations DB (38 situations), Scenarios DB (16 scenarios, 13 categories, 
 RightsEvaluator (12-point structured output), and QuizEngine (scoring & feedback).
 """
 import pytest
-from backend.app.civic_awareness import (
-    SITUATIONS_DB,
-    SITUATION_CATEGORIES,
-    SCENARIOS_DB,
-    SCENARIO_CATEGORIES,
-    RightsEvaluator,
-    QuizEngine,
-)
+try:
+    from app.civic_awareness import (
+        SITUATIONS_DB,
+        SITUATION_CATEGORIES,
+        SCENARIOS_DB,
+        SCENARIO_CATEGORIES,
+        RightsEvaluator,
+        QuizEngine,
+    )
+except ImportError:
+    from backend.app.civic_awareness import (
+        SITUATIONS_DB,
+        SITUATION_CATEGORIES,
+        SCENARIOS_DB,
+        SCENARIO_CATEGORIES,
+        RightsEvaluator,
+        QuizEngine,
+    )
 
 
 def test_situations_db_integrity():
